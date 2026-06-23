@@ -1,0 +1,1605 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Klin. Scores">
+<meta name="theme-color" content="#0f172a">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAE5UlEQVR42u3d7U8bdQDA8V4p1xbLWih0lIe5scUxOihPZbgJdOheqZu+MzHRxMR/wf9h/h0mxkSj8yGLyaCUMQoj0/GwAboW1zZxBUpLCYVer60vuh0HqxN1Uyjfz6veAy20X+73u0s4hIbLVzVAIVreAhAHiAPEAeIAcYA4QBwgDhAHiAMgDhAHiAPEAeIAcYA4QBwgDhAHQBwgDhAHiAPEAeIAcYA4QBwgDoA4QBwgDhAHiAPEAeIAcYA4QBwgDoA4QBwgDrxIukP10wavffLvn+TYlU85coBhBSAOEAeIA8QB4gBxgDhAHCAOEAdAHCAOEAeIA8QB4gBxgDhAHCAOgDhAHCAOEAeIA8QB4gBxgDhAHDj0hIbLV/fJt/Jc7qxSHPbJ/WE4coA4QBwgDhAHiAPEAeIAcYA4QBwAcYA4QBwgDhAHiAPEAeIAcYA4AOLAX9tHf5rwH+D/ynLkAHGAOEAcIA4QB4gDxAHiAIgDxAHiAHGAOEAcIA4QB4gDxAEQB4gDxAHiAHGAOEAcIA4QB4gDxAEQB4gDz8nhunkLOHKAOEAcIA4QB4gDxAHiAHEAxIE90fEW7AfNjqae8+cKbpJlWZKkxNp6JLIU8C/GVmPEgSefkE6n0+nKyspq7EedbS3z9xd8YxO5XI5hBbs1NZ/u6u5gzoHCHGebRVFkWDmkYrH4119ey48pZou5y9VRV1+7/Qut1dqO2sKhMHEcarIsR1einkHv+x+8JwiCst5oNCiPRVG88u5b5UfK84u5XO76Dz8++j2i7GC1Vr79zpta7eNRIplMfvPVd1tbWwwrxUCSpM3NHZ+l+qOVJGlo0JvJZPKLgiD0uXuVcUen07kH+pQycrmcZ3BkL2UQx8EgiqL6UKHRaOLxNfVidCV6e3xSWTSZXnr1wuMT4+4el9liVjbdmfwp8ijCsFIk57H5OYd6TAkGQ+uJ9V17zt1fqLHXnGg8nl88eaoxFAzLstx05hVln3AoPD01y5zjYKuosHz08YcFN63F13yj4wU3jd4cs1ZZjzyZfJx/rSeb3b4csrGx4fWMcipbtDOP6anZ77+9vrGRLLhDWkoP3RhWJh+iKBoM+vzjbDbrueFNpVLEUZwEQRAEIZ1OP2Of1ejqhG/y6fWTt+8sLS3/3VckjgOjtLS0pdUx8Ib72bv5/QFJktRrMplMwL/4D16xxHz6Eu/7/67aVlXfUK8sxmLxzz/7YuruzGLgN4PBUFFhUTaZLeZUSlpeXvmzp+p391ZVWXccALRaq7XS/yDAkaN4ZLPZWCzuGfQGH4bU69s7nXp94cvnzY4m5YRFrbbO3tbhJI4iNDbqS6dlZVGv1zvbWp/erara2t3j2p5/rMZWlqPKYlt7a22dnTiKTTK5eW/mnnrNGUeTyWRSrxFF8eLrbuVKaEbODA+NDA95lQmsIAj9F3uNZUbiKDYz07NbqivoJSUlna529Q69/RfKy7dzmRifjMfiicS679aEstJoNLoH+tTX04ijGKTT8t2fp9RrTp5qrLRW5h+fbWl++fgxZVPwYWh+biH/+MGvfvVU1G6vad/z5IM4Doz5uV92XTV3nevUaDQ2W3VXd6dqDEreHLm1c8oynlB9obO9ta6udk9XVrgFAzhygDhAHCAOEAeIA8QB4gBxgDgA4gBxgDjwAv0B2F1Md8jU9EsAAAAASUVORK5CYII=">
+<link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjogIktsaW5pc2NoZSBTY29yZXMiLCAic2hvcnRfbmFtZSI6ICJLbGluLlNjb3JlcyIsICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLCAiYmFja2dyb3VuZF9jb2xvciI6ICIjMGYxNzJhIiwgInRoZW1lX2NvbG9yIjogIiMwZjE3MmEiLCAiaWNvbnMiOiBbeyJzcmMiOiAiZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9SdzBLR2dvQUFBQU5TVWhFVWdBQUFMUUFBQUMwQ0FJQUFBQ3lyNUZsQUFBRTVVbEVRVlI0MnUzZDdVOGJkUURBOFY0cDF4YkxXaWgwbEllNXNjVXhPaWhQWmJnSmRPaGVxWnUrTXpIUnhNUi93ZjloL2gwbXhrU2o4eUdMeWFDVU1Rb2owL0d3QWJvVzF6WnhCVXBMQ1lWZXI2MHZ1aDBIcXhOMVV5amZ6NnZlQXkyMFgrNzN1MHM0aEliTFZ6VkFJVnJlQWhBSGlBUEVBZUlBY1lBNFFCd2dEaEFIaUFNZ0RoQUhpQVBFQWVJQWNZQTRRQndnRGhBSFFCd2dEaEFIaUFQRUFlSUFjWUE0UUJ3Z0RvQTRRQndnRGhBSGlBUEVBZUlBY1lBNFFCd2dEb0E0UUJ3Z0RyeEl1a1AxMHdhdmZmTHZuK1RZbFU4NWNvQmhCU0FPRUFlSUE4UUI0Z0J4Z0RoQUhDQU9FQWRBSENBT0VBZUlBOFFCNGdCeGdEaEFIQ0FPZ0RoQUhDQU9FQWVJQThRQjRnQnhnRGhBSERqMGhJYkxWL2ZKdC9KYzdxeFNIUGJKL1dFNGNvQTRRQndnRGhBSGlBUEVBZUlBY1lBNFFCd0FjWUE0UUJ3Z0RoQUhpQVBFQWVJQWNZQTRBT0xBWDl0SGY1cndIK0QveW5Ma0FIR0FPRUFjSUE0UUI0Z0R4QUhpQUlnRHhBSGlBSEdBT0VBY0lBNFFCNGdEeEFFUUI0Z0R4QUhpQUhHQU9FQWNJQTRRQjRnRHhBRVFCNGdEejhuaHVua0xPSEtBT0VBY0lBNFFCNGdEeEFIaUFIRUF4SUU5MGZFVzdBZk5qcWFlOCtjS2JwSmxXWktreE5wNkpMSVU4Qy9HVm1QRWdTZWZrRTZuMCtuS3lzcHE3RWVkYlMzejl4ZDhZeE81WEk1aEJiczFOWi91NnU1Z3pvSENIR2ViUlZGa1dEbWtZckg0MTE5ZXk0OHBab3U1eTlWUlYxKzcvUXV0MWRxTzJzS2hNSEVjYXJJc1IxZWlua0h2K3grOEp3aUNzdDVvTkNpUFJWRzg4dTViNVVmSzg0dTVYTzc2RHo4KytqMmk3R0MxVnI3OXpwdGE3ZU5SSXBsTWZ2UFZkMXRiV3d3cnhVQ1NwTTNOSForbCtxT1ZKR2xvMEp2SlpQS0xnaUQwdVh1VmNVZW4wN2tIK3BReWNybWNaM0JrTDJVUXg4RWdpcUw2VUtIUmFPTHhOZlZpZENWNmUzeFNXVFNaWG5yMXd1TVQ0KzRlbDlsaVZqYmRtZndwOGlqQ3NGSWs1N0g1T1lkNlRBa0dRK3VKOVYxN3p0MWZxTEhYbkdnOG5sODhlYW94RkF6THN0eDA1aFZsbjNBb1BEMDF5NXpqWUt1b3NIejA4WWNGTjYzRjEzeWo0d1UzamQ0Y3MxWlpqenlaZkp4L3JTZWIzYjRjc3JHeDRmV01jaXBidERPUDZhblo3Nys5dnJHUkxMaERXa29QM1JoV0poK2lLQm9NK3Z6amJEYnJ1ZUZOcFZMRVVad0VRUkFFSVoxT1AyT2YxZWpxaEcveTZmV1R0KzhzTFMzLzNWY2tqZ09qdExTMHBkVXg4SWI3MmJ2NS9RRkprdFJyTXBsTXdMLzREMTZ4eEh6NkV1LzcvNjdhVmxYZlVLOHN4bUx4enovN1l1cnV6R0xnTjRQQlVGRmhVVGFaTGVaVVNscGVYdm16cCtwMzkxWlZXWGNjQUxSYXE3WFMveURBa2FONFpMUFpXQ3p1R2ZRR0g0YlU2OXM3blhwOTRjdm56WTRtNVlSRnJiYk8zdGJoSkk0aU5EYnFTNmRsWlZHdjF6dmJXcC9lcmFyYTJ0M2oycDUvck1aV2xxUEtZbHQ3YTIyZG5UaUtUVEs1ZVcvbW5uck5HVWVUeVdSU3J4RkY4ZUxyYnVWS2FFYk9EQStOREE5NWxRbXNJQWo5RjN1TlpVYmlLRFl6MDdOYnFpdm9KU1VsbmE1MjlRNjkvUmZLeTdkem1SaWZqTWZpaWNTNjc5YUVzdEpvTkxvSCt0VFgwNGlqR0tUVDh0MmZwOVJyVHA1cXJMUlc1aCtmYldsKytmZ3haVlB3WVdoK2JpSC8rTUd2ZnZWVTFHNnZhZC96NUlNNERvejV1VjkyWFRWM25ldlVhRFEyVzNWWGQ2ZHFERXJlSExtMWM4b3lubEI5b2JPOXRhNnVkazlYVnJnRkF6aHlnRGhBSENBT0VBZUlBOFFCNGdCeGdEZ0E0Z0J4Z0Rqd0F2MEIyRjFNZDhqVTlFc0FBQUFBU1VWT1JLNUNZSUk9IiwgInNpemVzIjogIjE4MHgxODAiLCAidHlwZSI6ICJpbWFnZS9wbmcifV19">
+<title>Klinische Scores</title>
+<style>
+:root{--n:#1d4e89;--o:#0f766e;--s:#6d28d9;--ink:#0f172a;--sub:#475569;--mut:#94a3b8;--bg:#eef2f7;--line:#e2e8f0;--line2:#cbd5e1;--gbg:#dcfce7;--gc:#15803d;--mbg:#fef3c7;--mc:#92400e;--hbg:#fee2e2;--hc:#b91c1c;--r:13px;}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;margin:0;padding:0}
+html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;color:var(--ink);-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased}
+#jsbanner{background:#b91c1c;color:#fff;text-align:center;padding:10px 16px;font-size:14px;font-weight:700;line-height:1.4}
+.bar{position:sticky;top:0;z-index:50;background:var(--ink);color:#fff;padding:calc(env(safe-area-inset-top,0px) + 12px) 16px 12px;display:flex;align-items:center;gap:10px;min-height:48px}
+#back{display:none;color:#60a5fa;font-size:15px;font-weight:600;background:none;border:none;padding:4px 0;cursor:pointer;flex:none}
+.btitle{font-size:16px;font-weight:700;flex:1}
+#home{padding:14px}
+.search{width:100%;padding:12px 14px;border:1.5px solid var(--line2);border-radius:12px;font-size:16px;background:#fff;color:var(--ink);-webkit-appearance:none;margin-bottom:4px}
+.grp{margin-top:4px}
+.ghead{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--sub);margin:16px 2px 8px}
+.gdot{width:10px;height:10px;border-radius:3px;flex:none}
+.card{display:flex;align-items:center;justify-content:space-between;width:100%;text-align:left;background:#fff;border:1.5px solid var(--line);border-left:4px solid var(--cc);border-radius:12px;padding:13px 14px;margin-bottom:9px;cursor:pointer;-webkit-appearance:none}
+.card:active{opacity:.75}
+.cnm{font-size:15px;font-weight:700}.cds{font-size:12.5px;color:var(--mut);margin-top:1px}
+.carr{color:var(--mut);font-size:20px;flex:none;margin-left:8px}
+.page{padding:14px 14px 70px}
+.eye{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:#fff;border-radius:6px;padding:3px 9px;margin-bottom:8px}
+.ptitle{font-size:26px;font-weight:800;letter-spacing:-.4px;line-height:1.2;margin-bottom:2px}
+.pfull{font-size:13px;color:var(--mut);font-style:italic;margin-bottom:8px}
+.phr{border:none;border-top:1.5px solid var(--line);margin:6px 0 14px}
+.result{background:#fff;border:1.5px solid var(--line);border-top:4px solid var(--cc);border-radius:var(--r);padding:13px 15px;margin-bottom:18px;display:flex;align-items:center;gap:14px;box-shadow:0 4px 16px rgba(15,23,42,.07)}
+.rv{font-size:34px;font-weight:800;letter-spacing:-1px;line-height:1;min-width:56px;font-variant-numeric:tabular-nums}
+.rv small{font-size:12px;font-weight:600;color:var(--mut);letter-spacing:0}
+.rm{flex:1;min-width:0}
+.pill{display:inline-block;font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;background:#f1f5f9;color:var(--sub)}
+.pill.good{background:var(--gbg);color:var(--gc)}.pill.mid{background:var(--mbg);color:var(--mc)}.pill.high{background:var(--hbg);color:var(--hc)}
+.ri{font-size:13px;color:#334155;margin-top:4px;line-height:1.4}.rr{font-size:11px;color:var(--mut);margin-top:3px}
+.field{margin-bottom:13px}
+.q{font-size:14px;font-weight:600;color:#1e293b;margin-bottom:7px}
+.opts{display:flex;flex-direction:column;gap:7px}
+.opt{display:flex;align-items:center;gap:11px;background:#fff;border:1.5px solid var(--line);border-radius:11px;padding:12px 13px;cursor:pointer;min-height:48px;width:100%;text-align:left;-webkit-appearance:none}
+.opt input{position:absolute;opacity:0;width:1px;height:1px}
+.ind{width:20px;height:20px;border-radius:50%;border:2px solid var(--line2);flex:none;display:flex;align-items:center;justify-content:center}
+.opt.is-check .ind{border-radius:6px}
+.opt:has(input:checked){border-color:var(--cc)}
+.opt:has(input:checked) .ind{border-color:var(--cc);background:var(--cc)}
+.opt:has(input:checked) .ind::after{content:"";width:8px;height:8px;border-radius:inherit;background:#fff}
+.t{font-size:14px;flex:1}.p{font-size:13px;font-weight:700;color:var(--mut)}
+.opt.cls .grade{font-weight:700;font-size:14px;min-width:64px;flex:none}
+.opt.cls .desc{font-size:13px;color:var(--sub);flex:1}
+.num-row{display:flex;align-items:center;gap:10px}
+.num-row input{flex:1;min-width:0;padding:13px;font-size:17px;border:1.5px solid var(--line2);border-radius:11px;background:#fff;color:var(--ink);-webkit-appearance:none}
+.u{font-size:13px;color:var(--mut);white-space:nowrap}
+.btn-row{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}
+.calc-btn{background:var(--cc);color:#fff;border:none;font-size:15px;font-weight:700;padding:13px 22px;border-radius:12px;cursor:pointer;flex:1;-webkit-appearance:none}
+.reset-btn{background:#fff;border:1.5px solid var(--line2);color:var(--sub);font-size:14px;font-weight:600;padding:13px 18px;border-radius:12px;cursor:pointer;-webkit-appearance:none}
+.note{font-size:12.5px;color:#475569;background:#f8fafc;border:1.5px solid var(--line);border-left:3px solid var(--cc);border-radius:9px;padding:9px 12px;margin-top:14px;line-height:1.5}
+.disc{font-size:11px;color:var(--mut);margin-top:20px;padding-top:10px;border-top:1px solid var(--line)}
+.dual-result{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px}
+.badge{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:4px;font-size:10px;font-weight:800;color:#fff;flex:none;vertical-align:middle}
+.bc{background:var(--n)}.bh{background:var(--s)}
+.badge-legend{font-size:12px;color:var(--sub);margin:4px 0 8px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+@media(max-width:480px){.dual-result{grid-template-columns:1fr}}
+.sec-head{font-size:12px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;color:#fff;padding:7px 12px;border-radius:8px;margin:16px 0 10px}
+</style>
+</head>
+<body>
+<div id="jsbanner">⚠ JavaScript nicht aktiv – bitte in Safari öffnen (Teilen → In Safari öffnen)</div>
+<div class="bar">
+  <button id="back" type="button" onclick="BACK()">‹ Zurück</button>
+  <span class="btitle">Klinische Scores</span>
+</div>
+<div id="home">
+<input class="search" type="search" id="srch" placeholder="Score suchen…" oninput="SRCH(this.value)" autocomplete="off" autocorrect="off" autocapitalize="off">
+<div class="grp" id="grp1">
+<div class="ghead" id="gh1"><span class="gdot" style="background:#1d4e89"></span>Neurologie</div>
+<button type="button" class="card" style="--cc:var(--n)" data-tags="nihss nihss national institutes of health stroke scale schlaganfall-schweregrad" onclick="OPEN('nihss')"><div><div class="cnm">NIHSS</div><div class="cds">Schlaganfall-Schweregrad</div></div><span class="carr">›</span></button>
+<button type="button" class="card" style="--cc:var(--n)" data-tags="mrs mrs modified rankin scale funktionelles outcome" onclick="OPEN('mrs')"><div><div class="cnm">mRS</div><div class="cds">Funktionelles Outcome</div></div><span class="carr">›</span></button>
+<button type="button" class="card" style="--cc:var(--n)" data-tags="mtici mtici modified thrombolysis in cerebral infarction reperfusion nach thrombektomie" onclick="OPEN('mtici')"><div><div class="cnm">mTICI</div><div class="cds">Reperfusion nach Thrombektomie</div></div><span class="carr">›</span></button>
+<button type="button" class="card" style="--cc:var(--n)" data-tags="rope rope-score risk of paradoxical embolism – pfo-assoziierter schlaganfall pfo und kryptogener schlaganfall" onclick="OPEN('rope')"><div><div class="cnm">ROPE-Score</div><div class="cds">PFO und kryptogener Schlaganfall</div></div><span class="carr">›</span></button>
+<button type="button" class="card" style="--cc:var(--n)" data-tags="gcs gcs glasgow coma scale bewusstseinslage" onclick="OPEN('gcs')"><div><div class="cnm">GCS</div><div class="cds">Bewusstseinslage</div></div><span class="carr">›</span></button>
+<button type="button" class="card" style="--cc:var(--n)" data-tags="abcd2 abcd² risikostratifizierung nach tia schlaganfallrisiko nach tia" onclick="OPEN('abcd2')"><div><div class="cnm">ABCD²</div><div class="cds">Schlaganfallrisiko nach TIA</div></div><span class="carr">›</span></button>
+<button type="button" class="card" style="--cc:var(--n)" data-tags="ich ich-score intracerebral hemorrhage score icb – prognose" onclick="OPEN('ich')"><div><div class="cnm">ICH-Score</div><div class="cds">ICB – Prognose</div></div><span class="carr">›</span></button>
+<button type="button" class="card" style="--cc:var(--n)" data-tags="hunthess hunt &amp; hess graduierung der sab sab – klinik" onclick="OPEN('hunthess')"><div><div class="cnm">Hunt &amp; Hess</div><div class="cds">SAB – Klinik</div></div><span class="carr">›</span></button>
+<button type="button" class="card" style="--cc:var(--n)" data-tags="wfns wfns world federation of neurosurgical societies – sab sab – gcs-basiert" onclick="OPEN('wfns')"><div><div class="cnm">WFNS</div><div class="cds">SAB – GCS-basiert</div></div><span class="carr">›</span></button>
+<button type="button" class="card" style="--cc:var(--n)" data-tags="fisher mod. fisher ct-graduierung sab – vasospasmusrisiko sab – vasospasmus" onclick="OPEN('fisher')"><div><div class="cnm">mod. Fisher</div><div class="cds">SAB – Vasospasmus</div></div><span class="carr">›</span></button>
+<button type="button" class="card" style="--cc:var(--n)" data-tags="hoehn hoehn &amp; yahr parkinson-stadien parkinson – stadium" onclick="OPEN('hoehn')"><div><div class="cnm">Hoehn &amp; Yahr</div><div class="cds">Parkinson – Stadium</div></div><span class="carr">›</span></button>
+<button type="button" class="card" style="--cc:var(--n)" data-tags="edss edss expanded disability status scale (kurtzke) multiple sklerose – behinderung" onclick="OPEN('edss')"><div><div class="cnm">EDSS</div><div class="cds">Multiple Sklerose – Behinderung</div></div><span class="carr">›</span></button>
+<button type="button" class="card" style="--cc:var(--n)" data-tags="qmg qmg quantitative myasthenia gravis score myasthenia gravis – quantitativ" onclick="OPEN('qmg')"><div><div class="cnm">QMG</div><div class="cds">Myasthenia gravis – quantitativ</div></div><span class="carr">›</span></button>
+<button type="button" class="card" style="--cc:var(--n)" data-tags="mgfa mgfa myasthenia gravis foundation of america myasthenia gravis – klinisch" onclick="OPEN('mgfa')"><div><div class="cnm">MGFA</div><div class="cds">Myasthenia gravis – klinisch</div></div><span class="carr">›</span></button>
+<button type="button" class="card" style="--cc:var(--n)" data-tags="housebrackmann house-brackmann graduierung periphere fazialisparese fazialisparese" onclick="OPEN('housebrackmann')"><div><div class="cnm">House-Brackmann</div><div class="cds">Fazialisparese</div></div><span class="carr">›</span></button>
+<button type="button" class="card" style="--cc:var(--n)" data-tags="spetzler spetzler-martin graduierung zerebraler avm avm – op-risiko" onclick="OPEN('spetzler')"><div><div class="cnm">Spetzler-Martin</div><div class="cds">AVM – OP-Risiko</div></div><span class="carr">›</span></button>
+<button type="button" class="card" style="--cc:var(--n)" data-tags="phases phases-score 5-jahres-rupturrisiko inzidentelles intrakranielles aneurysma intrakranielles aneurysma – rupturrisiko" onclick="OPEN('phases')"><div><div class="cnm">PHASES-Score</div><div class="cds">Intrakranielles Aneurysma – Rupturrisiko</div></div><span class="carr">›</span></button>
+</div>
+<div class="grp" id="grp2">
+<div class="ghead" id="gh2"><span class="gdot" style="background:#0f766e"></span>Schilddrüse · Leber · Niere · VHF</div>
+<button type="button" class="card" style="--cc:var(--o)" data-tags="bwps burch-wartofsky punkteskala thyreotoxische krise schilddrüse – thyreotoxische krise" onclick="OPEN('bwps')"><div><div class="cnm">Burch-Wartofsky</div><div class="cds">Schilddrüse – thyreotoxische Krise</div></div><span class="carr">›</span></button>
+<button type="button" class="card" style="--cc:var(--o)" data-tags="child child-pugh leberzirrhose – schweregrad leber – funktion" onclick="OPEN('child')"><div><div class="cnm">Child-Pugh</div><div class="cds">Leber – Funktion</div></div><span class="carr">›</span></button>
+<button type="button" class="card" style="--cc:var(--o)" data-tags="meld meld / meld-na model for end-stage liver disease leber – mortalität" onclick="OPEN('meld')"><div><div class="cnm">MELD / MELD-Na</div><div class="cds">Leber – Mortalität</div></div><span class="carr">›</span></button>
+<button type="button" class="card" style="--cc:var(--o)" data-tags="kdigo kdigo – niere ckd-stadien: egfr + albuminurie kombiniert niere – gfr &amp; albuminurie" onclick="OPEN('kdigo')"><div><div class="cnm">KDIGO – Niere</div><div class="cds">Niere – GFR &amp; Albuminurie</div></div><span class="carr">›</span></button>
+<button type="button" class="card" style="--cc:var(--o)" data-tags="vhf cha₂ds₂-vasc &amp; has-bled schlaganfall- und blutungsrisiko bei vorhofflimmern vhf – stroke &amp; blutungsrisiko" onclick="OPEN('vhf')"><div><div class="cnm">CHA₂DS₂-VASc &amp; HAS-BLED</div><div class="cds">VHF – Stroke &amp; Blutungsrisiko</div></div><span class="carr">›</span></button>
+<button type="button" class="card" style="--cc:var(--o)" data-tags="ehra ehra european heart rhythm association – symptome vhf – symptomlast" onclick="OPEN('ehra')"><div><div class="cnm">EHRA</div><div class="cds">VHF – Symptomlast</div></div><span class="carr">›</span></button>
+</div>
+<div class="grp" id="grp3">
+<div class="ghead" id="gh3"><span class="gdot" style="background:#6d28d9"></span>Sonstige</div>
+<button type="button" class="card" style="--cc:var(--s)" data-tags="curb curb-65 ambulant erworbene pneumonie – schweregrad pneumonie" onclick="OPEN('curb')"><div><div class="cnm">CURB-65</div><div class="cds">Pneumonie</div></div><span class="carr">›</span></button>
+<button type="button" class="card" style="--cc:var(--s)" data-tags="wellstvt wells (tvt) vortestwahrscheinlichkeit tvt tiefe beinvenenthrombose" onclick="OPEN('wellstvt')"><div><div class="cnm">Wells (TVT)</div><div class="cds">Tiefe Beinvenenthrombose</div></div><span class="carr">›</span></button>
+<button type="button" class="card" style="--cc:var(--s)" data-tags="wellslae wells (lae) vortestwahrscheinlichkeit lungenembolie lungenembolie" onclick="OPEN('wellslae')"><div><div class="cnm">Wells (LAE)</div><div class="cds">Lungenembolie</div></div><span class="carr">›</span></button>
+<button type="button" class="card" style="--cc:var(--s)" data-tags="qsofa qsofa quick sequential organ failure assessment sepsis-screening" onclick="OPEN('qsofa')"><div><div class="cnm">qSOFA</div><div class="cds">Sepsis-Screening</div></div><span class="carr">›</span></button>
+<button type="button" class="card" style="--cc:var(--s)" data-tags="sofa sofa sequential organ failure assessment organdysfunktion – intensiv" onclick="OPEN('sofa')"><div><div class="cnm">SOFA</div><div class="cds">Organdysfunktion – Intensiv</div></div><span class="carr">›</span></button>
+<button type="button" class="card" style="--cc:var(--s)" data-tags="gbs glasgow-blatchford gbs – obere gi-blutung obere gi-blutung" onclick="OPEN('gbs')"><div><div class="cnm">Glasgow-Blatchford</div><div class="cds">Obere GI-Blutung</div></div><span class="carr">›</span></button>
+<button type="button" class="card" style="--cc:var(--s)" data-tags="nyha nyha new york heart association herzinsuffizienz" onclick="OPEN('nyha')"><div><div class="cnm">NYHA</div><div class="cds">Herzinsuffizienz</div></div><span class="carr">›</span></button>
+<button type="button" class="card" style="--cc:var(--s)" data-tags="centor centor / mcisaac streptokokken-pharyngitis strept.-pharyngitis" onclick="OPEN('centor')"><div><div class="cnm">Centor / McIsaac</div><div class="cds">Strept.-Pharyngitis</div></div><span class="carr">›</span></button>
+</div>
+</div>
+
+<section id="pg-nihss" class="page" style="display:none;--cc:var(--n)">
+<div class="eye" style="background:var(--n)">Schlaganfall</div>
+<h2 class="ptitle">NIHSS</h2>
+<div class="pfull">National Institutes of Health Stroke Scale</div>
+<hr class="phr">
+<div class="result" id="res-nihss"><div class="rv" id="rv-nihss">—</div><div class="rm"><span class="pill" id="rp-nihss">Auswahl treffen</span><div class="ri" id="ri-nihss"></div><div class="rr" id="rr-nihss"></div></div></div>
+<form id="f-nihss">
+<div class="field"><div class="q">1a Bewusstseinslage</div><div class="opts">
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v1a" value="0" checked><span class="ind"></span><span class="t">wach</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v1a" value="1"><span class="ind"></span><span class="t">benommen</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v1a" value="2"><span class="ind"></span><span class="t">stuporös</span><span class="p">+2</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v1a" value="3"><span class="ind"></span><span class="t">komatös</span><span class="p">+3</span></label>
+</div></div>
+<div class="field"><div class="q">1b Orientierung</div><div class="opts">
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v1b" value="0" checked><span class="ind"></span><span class="t">beide</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v1b" value="1"><span class="ind"></span><span class="t">eine</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v1b" value="2"><span class="ind"></span><span class="t">keine</span><span class="p">+2</span></label>
+</div></div>
+<div class="field"><div class="q">1c Aufforderungen</div><div class="opts">
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v1c" value="0" checked><span class="ind"></span><span class="t">beide</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v1c" value="1"><span class="ind"></span><span class="t">eine</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v1c" value="2"><span class="ind"></span><span class="t">keine</span><span class="p">+2</span></label>
+</div></div>
+<div class="field"><div class="q">2 Blickbewegung</div><div class="opts">
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v2" value="0" checked><span class="ind"></span><span class="t">normal</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v2" value="1"><span class="ind"></span><span class="t">part. Parese</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v2" value="2"><span class="ind"></span><span class="t">forcierte Dev.</span><span class="p">+2</span></label>
+</div></div>
+<div class="field"><div class="q">3 Gesichtsfeld</div><div class="opts">
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v3" value="0" checked><span class="ind"></span><span class="t">normal</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v3" value="1"><span class="ind"></span><span class="t">part. Hemianopsie</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v3" value="2"><span class="ind"></span><span class="t">komplett</span><span class="p">+2</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v3" value="3"><span class="ind"></span><span class="t">bilateral</span><span class="p">+3</span></label>
+</div></div>
+<div class="field"><div class="q">4 Faziale Parese</div><div class="opts">
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v4" value="0" checked><span class="ind"></span><span class="t">normal</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v4" value="1"><span class="ind"></span><span class="t">gering</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v4" value="2"><span class="ind"></span><span class="t">partiell</span><span class="p">+2</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v4" value="3"><span class="ind"></span><span class="t">komplett</span><span class="p">+3</span></label>
+</div></div>
+<div class="field"><div class="q">5a Arm rechts</div><div class="opts">
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v5a" value="0" checked><span class="ind"></span><span class="t">kein Absinken</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v5a" value="1"><span class="ind"></span><span class="t">Absinken</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v5a" value="2"><span class="ind"></span><span class="t">geg. Schwerkraft</span><span class="p">+2</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v5a" value="3"><span class="ind"></span><span class="t">nicht geg. SK</span><span class="p">+3</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v5a" value="4"><span class="ind"></span><span class="t">keine Bewegung</span><span class="p">+4</span></label>
+</div></div>
+<div class="field"><div class="q">5b Arm links</div><div class="opts">
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v5b" value="0" checked><span class="ind"></span><span class="t">kein Absinken</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v5b" value="1"><span class="ind"></span><span class="t">Absinken</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v5b" value="2"><span class="ind"></span><span class="t">geg. Schwerkraft</span><span class="p">+2</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v5b" value="3"><span class="ind"></span><span class="t">nicht geg. SK</span><span class="p">+3</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v5b" value="4"><span class="ind"></span><span class="t">keine Bewegung</span><span class="p">+4</span></label>
+</div></div>
+<div class="field"><div class="q">6a Bein rechts</div><div class="opts">
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v6a" value="0" checked><span class="ind"></span><span class="t">kein Absinken</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v6a" value="1"><span class="ind"></span><span class="t">Absinken</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v6a" value="2"><span class="ind"></span><span class="t">geg. Schwerkraft</span><span class="p">+2</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v6a" value="3"><span class="ind"></span><span class="t">nicht geg. SK</span><span class="p">+3</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v6a" value="4"><span class="ind"></span><span class="t">keine Bewegung</span><span class="p">+4</span></label>
+</div></div>
+<div class="field"><div class="q">6b Bein links</div><div class="opts">
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v6b" value="0" checked><span class="ind"></span><span class="t">kein Absinken</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v6b" value="1"><span class="ind"></span><span class="t">Absinken</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v6b" value="2"><span class="ind"></span><span class="t">geg. Schwerkraft</span><span class="p">+2</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v6b" value="3"><span class="ind"></span><span class="t">nicht geg. SK</span><span class="p">+3</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v6b" value="4"><span class="ind"></span><span class="t">keine Bewegung</span><span class="p">+4</span></label>
+</div></div>
+<div class="field"><div class="q">7 Ataxie</div><div class="opts">
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v7" value="0" checked><span class="ind"></span><span class="t">keine</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v7" value="1"><span class="ind"></span><span class="t">1 Extremität</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v7" value="2"><span class="ind"></span><span class="t">2</span><span class="p">+2</span></label>
+</div></div>
+<div class="field"><div class="q">8 Sensibilität</div><div class="opts">
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v8" value="0" checked><span class="ind"></span><span class="t">normal</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v8" value="1"><span class="ind"></span><span class="t">leicht–mäßig</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v8" value="2"><span class="ind"></span><span class="t">schwer</span><span class="p">+2</span></label>
+</div></div>
+<div class="field"><div class="q">9 Sprache/Aphasie</div><div class="opts">
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v9" value="0" checked><span class="ind"></span><span class="t">keine</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v9" value="1"><span class="ind"></span><span class="t">leicht</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v9" value="2"><span class="ind"></span><span class="t">schwer</span><span class="p">+2</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v9" value="3"><span class="ind"></span><span class="t">global</span><span class="p">+3</span></label>
+</div></div>
+<div class="field"><div class="q">10 Dysarthrie</div><div class="opts">
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v10" value="0" checked><span class="ind"></span><span class="t">normal</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v10" value="1"><span class="ind"></span><span class="t">leicht</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v10" value="2"><span class="ind"></span><span class="t">schwer</span><span class="p">+2</span></label>
+</div></div>
+<div class="field"><div class="q">11 Neglect</div><div class="opts">
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v11" value="0" checked><span class="ind"></span><span class="t">kein</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v11" value="1"><span class="ind"></span><span class="t">1 Modalität</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('nihss')"><input type="radio" name="v11" value="2"><span class="ind"></span><span class="t">mehrere</span><span class="p">+2</span></label>
+</div></div>
+</form>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="R('nihss')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('nihss')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('nihss')">Zurücksetzen</button></div>
+
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+
+<section id="pg-mrs" class="page" style="display:none;--cc:var(--n)">
+<div class="eye" style="background:var(--n)">Outcome</div>
+<h2 class="ptitle">mRS</h2>
+<div class="pfull">modified Rankin Scale</div>
+<hr class="phr">
+<div class="result" id="res-mrs"><div class="rv" id="rv-mrs">—</div><div class="rm"><span class="pill" id="rp-mrs">Auswahl treffen</span><div class="ri" id="ri-mrs"></div><div class="rr" id="rr-mrs"></div></div></div>
+<form id="f-mrs">
+<div class="field"><div class="opts">
+<label class="opt cls" onclick="R('mrs')"><input type="radio" name="cg" value="0" data-tone="good" data-desc="Keine Symptome" data-v="Grad 0"><span class="ind"></span><span class="grade">Grad 0</span><span class="desc">Keine Symptome</span></label>
+<label class="opt cls" onclick="R('mrs')"><input type="radio" name="cg" value="1" data-tone="good" data-desc="Keine relevante Behinderung; alle Aktivitäten möglich" data-v="Grad 1"><span class="ind"></span><span class="grade">Grad 1</span><span class="desc">Keine relevante Behinderung; alle Aktivitäten möglich</span></label>
+<label class="opt cls" onclick="R('mrs')"><input type="radio" name="cg" value="2" data-tone="good" data-desc="Leichte Behinderung; Selbstversorgung ohne Hilfe" data-v="Grad 2"><span class="ind"></span><span class="grade">Grad 2</span><span class="desc">Leichte Behinderung; Selbstversorgung ohne Hilfe</span></label>
+<label class="opt cls" onclick="R('mrs')"><input type="radio" name="cg" value="3" data-tone="mid" data-desc="Mäßige Behinderung; etwas Hilfe, geht ohne Hilfe" data-v="Grad 3"><span class="ind"></span><span class="grade">Grad 3</span><span class="desc">Mäßige Behinderung; etwas Hilfe, geht ohne Hilfe</span></label>
+<label class="opt cls" onclick="R('mrs')"><input type="radio" name="cg" value="4" data-tone="high" data-desc="Mittelschwere Behinderung; Gehen/Körperpflege mit Hilfe" data-v="Grad 4"><span class="ind"></span><span class="grade">Grad 4</span><span class="desc">Mittelschwere Behinderung; Gehen/Körperpflege mit Hilfe</span></label>
+<label class="opt cls" onclick="R('mrs')"><input type="radio" name="cg" value="5" data-tone="high" data-desc="Schwere Behinderung; bettlägerig, inkontinent" data-v="Grad 5"><span class="ind"></span><span class="grade">Grad 5</span><span class="desc">Schwere Behinderung; bettlägerig, inkontinent</span></label>
+<label class="opt cls" onclick="R('mrs')"><input type="radio" name="cg" value="6" data-tone="high" data-desc="Tod" data-v="Grad 6"><span class="ind"></span><span class="grade">Grad 6</span><span class="desc">Tod</span></label>
+</div></div>
+</form>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="R('mrs')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('mrs')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('mrs')">Zurücksetzen</button></div>
+<div class="note">&quot;Gutes Outcome&quot; nach Schlaganfall meist als mRS 0–2 definiert.</div>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+
+<section id="pg-mtici" class="page" style="display:none;--cc:var(--n)">
+<div class="eye" style="background:var(--n)">Thrombektomie</div>
+<h2 class="ptitle">mTICI</h2>
+<div class="pfull">modified Thrombolysis in Cerebral Infarction</div>
+<hr class="phr">
+<div class="result" id="res-mtici"><div class="rv" id="rv-mtici">—</div><div class="rm"><span class="pill" id="rp-mtici">Auswahl treffen</span><div class="ri" id="ri-mtici"></div><div class="rr" id="rr-mtici"></div></div></div>
+<form id="f-mtici">
+<div class="field"><div class="opts">
+<label class="opt cls" onclick="R('mtici')"><input type="radio" name="cg" value="0" data-tone="high" data-desc="Keine Reperfusion" data-v="0"><span class="ind"></span><span class="grade">0</span><span class="desc">Keine Reperfusion</span></label>
+<label class="opt cls" onclick="R('mtici')"><input type="radio" name="cg" value="1" data-tone="high" data-desc="Minimaler Fluss, kaum distale Füllung" data-v="1"><span class="ind"></span><span class="grade">1</span><span class="desc">Minimaler Fluss, kaum distale Füllung</span></label>
+<label class="opt cls" onclick="R('mtici')"><input type="radio" name="cg" value="2" data-tone="mid" data-desc="Reperfusion &lt;50% des Territoriums" data-v="2a"><span class="ind"></span><span class="grade">2a</span><span class="desc">Reperfusion &lt;50% des Territoriums</span></label>
+<label class="opt cls" onclick="R('mtici')"><input type="radio" name="cg" value="3" data-tone="good" data-desc="Reperfusion ≥50% – erfolgreich" data-v="2b"><span class="ind"></span><span class="grade">2b</span><span class="desc">Reperfusion ≥50% – erfolgreich</span></label>
+<label class="opt cls" onclick="R('mtici')"><input type="radio" name="cg" value="4" data-tone="good" data-desc="Nahezu vollständig – exzellent" data-v="2c"><span class="ind"></span><span class="grade">2c</span><span class="desc">Nahezu vollständig – exzellent</span></label>
+<label class="opt cls" onclick="R('mtici')"><input type="radio" name="cg" value="5" data-tone="good" data-desc="Vollständige Reperfusion – exzellent" data-v="3"><span class="ind"></span><span class="grade">3</span><span class="desc">Vollständige Reperfusion – exzellent</span></label>
+</div></div>
+</form>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="R('mtici')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('mtici')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('mtici')">Zurücksetzen</button></div>
+<div class="note">Ziel: mTICI 2b–3 (zunehmend 2c–3).</div>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+
+<section id="pg-rope" class="page" style="display:none;--cc:var(--n)">
+<div class="eye" style="background:var(--n)">Schlaganfall / PFO</div>
+<h2 class="ptitle">ROPE-Score</h2>
+<div class="pfull">Risk of Paradoxical Embolism – PFO-assoziierter Schlaganfall</div>
+<hr class="phr">
+<div class="result" id="res-rope"><div class="rv" id="rv-rope">—</div><div class="rm"><span class="pill" id="rp-rope">Auswahl treffen</span><div class="ri" id="ri-rope"></div><div class="rr" id="rr-rope"></div></div></div>
+<form id="f-rope">
+<div class="field"><div class="q">Alter</div><div class="opts">
+<label class="opt" onclick="R('rope')"><input type="radio" name="rope_age" value="0" checked><span class="ind"></span><span class="t">≥70 J. → 0</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('rope')"><input type="radio" name="rope_age" value="1"><span class="ind"></span><span class="t">60–69 J. → 1</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('rope')"><input type="radio" name="rope_age" value="2"><span class="ind"></span><span class="t">50–59 J. → 2</span><span class="p">+2</span></label>
+<label class="opt" onclick="R('rope')"><input type="radio" name="rope_age" value="3"><span class="ind"></span><span class="t">40–49 J. → 3</span><span class="p">+3</span></label>
+<label class="opt" onclick="R('rope')"><input type="radio" name="rope_age" value="4"><span class="ind"></span><span class="t">30–39 J. → 4</span><span class="p">+4</span></label>
+<label class="opt" onclick="R('rope')"><input type="radio" name="rope_age" value="5"><span class="ind"></span><span class="t">&lt;30 J. → 5</span><span class="p">+5</span></label>
+</div></div>
+<div class="field"><label class="opt is-check" onclick="R('rope')"><input type="checkbox" name="rope_nohtn" value="1"><span class="ind"></span><span class="t">Keine arterielle Hypertonie</span><span class="p">+1</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('rope')"><input type="checkbox" name="rope_nodm" value="1"><span class="ind"></span><span class="t">Kein Diabetes mellitus</span><span class="p">+1</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('rope')"><input type="checkbox" name="rope_nostroke" value="1"><span class="ind"></span><span class="t">Kein früherer Schlaganfall / keine TIA</span><span class="p">+1</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('rope')"><input type="checkbox" name="rope_nosmoke" value="1"><span class="ind"></span><span class="t">Nichtraucher</span><span class="p">+1</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('rope')"><input type="checkbox" name="rope_cortical" value="1"><span class="ind"></span><span class="t">Kortikaler Infarkt in der Bildgebung (MRT/CT)</span><span class="p">+1</span></label></div>
+</form>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="R('rope')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('rope')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('rope')">Zurücksetzen</button></div>
+<div class="note">Kent et al., Neurology 2013. Höherer Score = Schlaganfall wahrscheinlicher durch PFO verursacht. ROPE ≥7 oft als Schwellenwert für Verschluss-Indikation verwendet.</div>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+
+<section id="pg-gcs" class="page" style="display:none;--cc:var(--n)">
+<div class="eye" style="background:var(--n)">Bewusstsein</div>
+<h2 class="ptitle">GCS</h2>
+<div class="pfull">Glasgow Coma Scale</div>
+<hr class="phr">
+<div class="result" id="res-gcs"><div class="rv" id="rv-gcs">—</div><div class="rm"><span class="pill" id="rp-gcs">Auswahl treffen</span><div class="ri" id="ri-gcs"></div><div class="rr" id="rr-gcs"></div></div></div>
+<form id="f-gcs">
+<div class="field"><div class="q">Augen</div><div class="opts">
+<label class="opt" onclick="R('gcs')"><input type="radio" name="ge" value="4" checked><span class="ind"></span><span class="t">spontan</span><span class="p">+4</span></label>
+<label class="opt" onclick="R('gcs')"><input type="radio" name="ge" value="3"><span class="ind"></span><span class="t">auf Ansprache</span><span class="p">+3</span></label>
+<label class="opt" onclick="R('gcs')"><input type="radio" name="ge" value="2"><span class="ind"></span><span class="t">auf Schmerz</span><span class="p">+2</span></label>
+<label class="opt" onclick="R('gcs')"><input type="radio" name="ge" value="1"><span class="ind"></span><span class="t">keine</span><span class="p">+1</span></label>
+</div></div>
+<div class="field"><div class="q">Verbal</div><div class="opts">
+<label class="opt" onclick="R('gcs')"><input type="radio" name="gv" value="5" checked><span class="ind"></span><span class="t">orientiert</span><span class="p">+5</span></label>
+<label class="opt" onclick="R('gcs')"><input type="radio" name="gv" value="4"><span class="ind"></span><span class="t">verwirrt</span><span class="p">+4</span></label>
+<label class="opt" onclick="R('gcs')"><input type="radio" name="gv" value="3"><span class="ind"></span><span class="t">inadäquate Worte</span><span class="p">+3</span></label>
+<label class="opt" onclick="R('gcs')"><input type="radio" name="gv" value="2"><span class="ind"></span><span class="t">Laute</span><span class="p">+2</span></label>
+<label class="opt" onclick="R('gcs')"><input type="radio" name="gv" value="1"><span class="ind"></span><span class="t">keine</span><span class="p">+1</span></label>
+</div></div>
+<div class="field"><div class="q">Motorik</div><div class="opts">
+<label class="opt" onclick="R('gcs')"><input type="radio" name="gm" value="6" checked><span class="ind"></span><span class="t">Aufforderung</span><span class="p">+6</span></label>
+<label class="opt" onclick="R('gcs')"><input type="radio" name="gm" value="5"><span class="ind"></span><span class="t">gezielte Abwehr</span><span class="p">+5</span></label>
+<label class="opt" onclick="R('gcs')"><input type="radio" name="gm" value="4"><span class="ind"></span><span class="t">ungezielte Abwehr</span><span class="p">+4</span></label>
+<label class="opt" onclick="R('gcs')"><input type="radio" name="gm" value="3"><span class="ind"></span><span class="t">Beugung</span><span class="p">+3</span></label>
+<label class="opt" onclick="R('gcs')"><input type="radio" name="gm" value="2"><span class="ind"></span><span class="t">Streckung</span><span class="p">+2</span></label>
+<label class="opt" onclick="R('gcs')"><input type="radio" name="gm" value="1"><span class="ind"></span><span class="t">keine</span><span class="p">+1</span></label>
+</div></div>
+</form>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="R('gcs')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('gcs')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('gcs')">Zurücksetzen</button></div>
+<div class="note">GCS ≤ 8: Intubation erwägen.</div>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+
+<section id="pg-abcd2" class="page" style="display:none;--cc:var(--n)">
+<div class="eye" style="background:var(--n)">TIA</div>
+<h2 class="ptitle">ABCD²</h2>
+<div class="pfull">Risikostratifizierung nach TIA</div>
+<hr class="phr">
+<div class="result" id="res-abcd2"><div class="rv" id="rv-abcd2">—</div><div class="rm"><span class="pill" id="rp-abcd2">Auswahl treffen</span><div class="ri" id="ri-abcd2"></div><div class="rr" id="rr-abcd2"></div></div></div>
+<form id="f-abcd2">
+<div class="field"><label class="opt is-check" onclick="R('abcd2')"><input type="checkbox" name="a1" value="1"><span class="ind"></span><span class="t">Alter ≥ 60 Jahre</span><span class="p">+1</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('abcd2')"><input type="checkbox" name="a2" value="1"><span class="ind"></span><span class="t">Blutdruck ≥ 140/90 mmHg</span><span class="p">+1</span></label></div>
+<div class="field"><div class="q">Klinik</div><div class="opts">
+<label class="opt" onclick="R('abcd2')"><input type="radio" name="a3" value="0" checked><span class="ind"></span><span class="t">andere</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('abcd2')"><input type="radio" name="a3" value="1"><span class="ind"></span><span class="t">Sprachstörung ohne Parese</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('abcd2')"><input type="radio" name="a3" value="2"><span class="ind"></span><span class="t">einseitige Parese</span><span class="p">+2</span></label>
+</div></div>
+<div class="field"><div class="q">Dauer</div><div class="opts">
+<label class="opt" onclick="R('abcd2')"><input type="radio" name="a4" value="0" checked><span class="ind"></span><span class="t">&lt;10 min</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('abcd2')"><input type="radio" name="a4" value="1"><span class="ind"></span><span class="t">10–59 min</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('abcd2')"><input type="radio" name="a4" value="2"><span class="ind"></span><span class="t">≥60 min</span><span class="p">+2</span></label>
+</div></div>
+<div class="field"><label class="opt is-check" onclick="R('abcd2')"><input type="checkbox" name="a5" value="1"><span class="ind"></span><span class="t">Diabetes mellitus</span><span class="p">+1</span></label></div>
+</form>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="R('abcd2')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('abcd2')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('abcd2')">Zurücksetzen</button></div>
+
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+
+<section id="pg-ich" class="page" style="display:none;--cc:var(--n)">
+<div class="eye" style="background:var(--n)">ICB</div>
+<h2 class="ptitle">ICH-Score</h2>
+<div class="pfull">Intracerebral Hemorrhage Score</div>
+<hr class="phr">
+<div class="result" id="res-ich"><div class="rv" id="rv-ich">—</div><div class="rm"><span class="pill" id="rp-ich">Auswahl treffen</span><div class="ri" id="ri-ich"></div><div class="rr" id="rr-ich"></div></div></div>
+<form id="f-ich">
+<div class="field"><div class="q">GCS</div><div class="opts">
+<label class="opt" onclick="R('ich')"><input type="radio" name="i1" value="0" checked><span class="ind"></span><span class="t">13–15</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('ich')"><input type="radio" name="i1" value="1"><span class="ind"></span><span class="t">5–12</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('ich')"><input type="radio" name="i1" value="2"><span class="ind"></span><span class="t">3–4</span><span class="p">+2</span></label>
+</div></div>
+<div class="field"><label class="opt is-check" onclick="R('ich')"><input type="checkbox" name="i2" value="1"><span class="ind"></span><span class="t">Volumen ≥ 30 ml</span><span class="p">+1</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('ich')"><input type="checkbox" name="i3" value="1"><span class="ind"></span><span class="t">Ventrikeleinbruch</span><span class="p">+1</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('ich')"><input type="checkbox" name="i4" value="1"><span class="ind"></span><span class="t">Infratentoriell</span><span class="p">+1</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('ich')"><input type="checkbox" name="i5" value="1"><span class="ind"></span><span class="t">Alter ≥ 80 J.</span><span class="p">+1</span></label></div>
+</form>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="R('ich')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('ich')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('ich')">Zurücksetzen</button></div>
+
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+
+<section id="pg-hunthess" class="page" style="display:none;--cc:var(--n)">
+<div class="eye" style="background:var(--n)">SAB</div>
+<h2 class="ptitle">Hunt &amp; Hess</h2>
+<div class="pfull">Graduierung der SAB</div>
+<hr class="phr">
+<div class="result" id="res-hunthess"><div class="rv" id="rv-hunthess">—</div><div class="rm"><span class="pill" id="rp-hunthess">Auswahl treffen</span><div class="ri" id="ri-hunthess"></div><div class="rr" id="rr-hunthess"></div></div></div>
+<form id="f-hunthess">
+<div class="field"><div class="opts">
+<label class="opt cls" onclick="R('hunthess')"><input type="radio" name="cg" value="0" data-tone="good" data-desc="Asymptomatisch oder leichter KS, leichte Nackensteife" data-v="Grad I"><span class="ind"></span><span class="grade">Grad I</span><span class="desc">Asymptomatisch oder leichter KS, leichte Nackensteife</span></label>
+<label class="opt cls" onclick="R('hunthess')"><input type="radio" name="cg" value="1" data-tone="good" data-desc="Schwerer KS, Meningismus, Hirnnervenausfall; kein Defizit" data-v="Grad II"><span class="ind"></span><span class="grade">Grad II</span><span class="desc">Schwerer KS, Meningismus, Hirnnervenausfall; kein Defizit</span></label>
+<label class="opt cls" onclick="R('hunthess')"><input type="radio" name="cg" value="2" data-tone="mid" data-desc="Somnolenz, Verwirrtheit, leichtes Defizit" data-v="Grad III"><span class="ind"></span><span class="grade">Grad III</span><span class="desc">Somnolenz, Verwirrtheit, leichtes Defizit</span></label>
+<label class="opt cls" onclick="R('hunthess')"><input type="radio" name="cg" value="3" data-tone="high" data-desc="Sopor, schwere Hemiparese, Dezerebrationsbeginn" data-v="Grad IV"><span class="ind"></span><span class="grade">Grad IV</span><span class="desc">Sopor, schwere Hemiparese, Dezerebrationsbeginn</span></label>
+<label class="opt cls" onclick="R('hunthess')"><input type="radio" name="cg" value="4" data-tone="high" data-desc="Koma, Dezerebration, moribund" data-v="Grad V"><span class="ind"></span><span class="grade">Grad V</span><span class="desc">Koma, Dezerebration, moribund</span></label>
+</div></div>
+</form>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="R('hunthess')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('hunthess')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('hunthess')">Zurücksetzen</button></div>
+
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+
+<section id="pg-wfns" class="page" style="display:none;--cc:var(--n)">
+<div class="eye" style="background:var(--n)">SAB</div>
+<h2 class="ptitle">WFNS</h2>
+<div class="pfull">World Federation of Neurosurgical Societies – SAB</div>
+<hr class="phr">
+<div class="result" id="res-wfns"><div class="rv" id="rv-wfns">—</div><div class="rm"><span class="pill" id="rp-wfns">Auswahl treffen</span><div class="ri" id="ri-wfns"></div><div class="rr" id="rr-wfns"></div></div></div>
+<form id="f-wfns">
+<div class="field"><div class="opts">
+<label class="opt cls" onclick="R('wfns')"><input type="radio" name="cg" value="0" data-tone="good" data-desc="GCS 15, kein motorisches Defizit" data-v="Grad I"><span class="ind"></span><span class="grade">Grad I</span><span class="desc">GCS 15, kein motorisches Defizit</span></label>
+<label class="opt cls" onclick="R('wfns')"><input type="radio" name="cg" value="1" data-tone="good" data-desc="GCS 13–14, kein Defizit" data-v="Grad II"><span class="ind"></span><span class="grade">Grad II</span><span class="desc">GCS 13–14, kein Defizit</span></label>
+<label class="opt cls" onclick="R('wfns')"><input type="radio" name="cg" value="2" data-tone="mid" data-desc="GCS 13–14, Defizit vorhanden" data-v="Grad III"><span class="ind"></span><span class="grade">Grad III</span><span class="desc">GCS 13–14, Defizit vorhanden</span></label>
+<label class="opt cls" onclick="R('wfns')"><input type="radio" name="cg" value="3" data-tone="high" data-desc="GCS 7–12" data-v="Grad IV"><span class="ind"></span><span class="grade">Grad IV</span><span class="desc">GCS 7–12</span></label>
+<label class="opt cls" onclick="R('wfns')"><input type="radio" name="cg" value="4" data-tone="high" data-desc="GCS 3–6" data-v="Grad V"><span class="ind"></span><span class="grade">Grad V</span><span class="desc">GCS 3–6</span></label>
+</div></div>
+</form>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="R('wfns')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('wfns')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('wfns')">Zurücksetzen</button></div>
+
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+
+<section id="pg-fisher" class="page" style="display:none;--cc:var(--n)">
+<div class="eye" style="background:var(--n)">SAB</div>
+<h2 class="ptitle">mod. Fisher</h2>
+<div class="pfull">CT-Graduierung SAB – Vasospasmusrisiko</div>
+<hr class="phr">
+<div class="result" id="res-fisher"><div class="rv" id="rv-fisher">—</div><div class="rm"><span class="pill" id="rp-fisher">Auswahl treffen</span><div class="ri" id="ri-fisher"></div><div class="rr" id="rr-fisher"></div></div></div>
+<form id="f-fisher">
+<div class="field"><div class="opts">
+<label class="opt cls" onclick="R('fisher')"><input type="radio" name="cg" value="0" data-tone="good" data-desc="Keine SAB, keine IVH" data-v="Grad 0"><span class="ind"></span><span class="grade">Grad 0</span><span class="desc">Keine SAB, keine IVH</span></label>
+<label class="opt cls" onclick="R('fisher')"><input type="radio" name="cg" value="1" data-tone="good" data-desc="Dünne SAB, keine IVH" data-v="Grad 1"><span class="ind"></span><span class="grade">Grad 1</span><span class="desc">Dünne SAB, keine IVH</span></label>
+<label class="opt cls" onclick="R('fisher')"><input type="radio" name="cg" value="2" data-tone="mid" data-desc="Dünne SAB, mit IVH" data-v="Grad 2"><span class="ind"></span><span class="grade">Grad 2</span><span class="desc">Dünne SAB, mit IVH</span></label>
+<label class="opt cls" onclick="R('fisher')"><input type="radio" name="cg" value="3" data-tone="high" data-desc="Dicke SAB, keine IVH" data-v="Grad 3"><span class="ind"></span><span class="grade">Grad 3</span><span class="desc">Dicke SAB, keine IVH</span></label>
+<label class="opt cls" onclick="R('fisher')"><input type="radio" name="cg" value="4" data-tone="high" data-desc="Dicke SAB, mit IVH" data-v="Grad 4"><span class="ind"></span><span class="grade">Grad 4</span><span class="desc">Dicke SAB, mit IVH</span></label>
+</div></div>
+</form>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="R('fisher')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('fisher')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('fisher')">Zurücksetzen</button></div>
+
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+
+<section id="pg-hoehn" class="page" style="display:none;--cc:var(--n)">
+<div class="eye" style="background:var(--n)">Parkinson</div>
+<h2 class="ptitle">Hoehn &amp; Yahr</h2>
+<div class="pfull">Parkinson-Stadien</div>
+<hr class="phr">
+<div class="result" id="res-hoehn"><div class="rv" id="rv-hoehn">—</div><div class="rm"><span class="pill" id="rp-hoehn">Auswahl treffen</span><div class="ri" id="ri-hoehn"></div><div class="rr" id="rr-hoehn"></div></div></div>
+<form id="f-hoehn">
+<div class="field"><div class="opts">
+<label class="opt cls" onclick="R('hoehn')"><input type="radio" name="cg" value="0" data-tone="good" data-desc="Einseitig" data-v="1"><span class="ind"></span><span class="grade">1</span><span class="desc">Einseitig</span></label>
+<label class="opt cls" onclick="R('hoehn')"><input type="radio" name="cg" value="1" data-tone="good" data-desc="Einseitig + axial" data-v="1.5"><span class="ind"></span><span class="grade">1.5</span><span class="desc">Einseitig + axial</span></label>
+<label class="opt cls" onclick="R('hoehn')"><input type="radio" name="cg" value="2" data-tone="good" data-desc="Beidseitig, kein Gleichgewichtsverlust" data-v="2"><span class="ind"></span><span class="grade">2</span><span class="desc">Beidseitig, kein Gleichgewichtsverlust</span></label>
+<label class="opt cls" onclick="R('hoehn')"><input type="radio" name="cg" value="3" data-tone="good" data-desc="Leicht beidseitig, Ausgleich möglich" data-v="2.5"><span class="ind"></span><span class="grade">2.5</span><span class="desc">Leicht beidseitig, Ausgleich möglich</span></label>
+<label class="opt cls" onclick="R('hoehn')"><input type="radio" name="cg" value="4" data-tone="mid" data-desc="Posturale Instabilität, unabhängig" data-v="3"><span class="ind"></span><span class="grade">3</span><span class="desc">Posturale Instabilität, unabhängig</span></label>
+<label class="opt cls" onclick="R('hoehn')"><input type="radio" name="cg" value="5" data-tone="high" data-desc="Schwere Behinderung, geht noch alleine" data-v="4"><span class="ind"></span><span class="grade">4</span><span class="desc">Schwere Behinderung, geht noch alleine</span></label>
+<label class="opt cls" onclick="R('hoehn')"><input type="radio" name="cg" value="6" data-tone="high" data-desc="Rollstuhl/bettlägerig" data-v="5"><span class="ind"></span><span class="grade">5</span><span class="desc">Rollstuhl/bettlägerig</span></label>
+</div></div>
+</form>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="R('hoehn')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('hoehn')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('hoehn')">Zurücksetzen</button></div>
+
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+
+<section id="pg-edss" class="page" style="display:none;--cc:var(--n)">
+<div class="eye" style="background:var(--n)">MS</div>
+<h2 class="ptitle">EDSS</h2>
+<div class="pfull">Expanded Disability Status Scale – Kurtzke-Funktionssysteme</div>
+<hr class="phr">
+<div class="result" style="border-top-color:var(--n);--cc:var(--n)"><div class="rv" id="rv-edss">—</div><div class="rm"><span class="pill" id="rp-edss">Funktionssysteme eingeben</span><div class="ri" id="ri-edss"></div><div class="rr" id="rr-edss"></div></div></div>
+<form id="f-edss">
+<div class="sec-head" style="background:var(--n)">1 – Pyramidale Bahnen (0–6)</div>
+<div class="field"><div class="q">Motorische Funktion</div><div class="opts">
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs1" value="0" checked><span class="ind"></span><span class="t">0 – Normal</span><span class="p">0</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs1" value="1"><span class="ind"></span><span class="t">1 – Abnorme Zeichen, keine Behinderung</span><span class="p">1</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs1" value="2"><span class="ind"></span><span class="t">2 – Minimale Behinderung</span><span class="p">2</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs1" value="3"><span class="ind"></span><span class="t">3 – Leichte bis mäßige Para-/Hemiplegie oder schwere Monoplegie</span><span class="p">3</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs1" value="4"><span class="ind"></span><span class="t">4 – Ausgeprägte Para-/Hemiplegie oder Tetraparese</span><span class="p">4</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs1" value="5"><span class="ind"></span><span class="t">5 – Paraplegie, Hemiplegie oder Tetraplegie</span><span class="p">5</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs1" value="6"><span class="ind"></span><span class="t">6 – Keine Willkürmotorik</span><span class="p">6</span></label>
+</div></div>
+<div class="sec-head" style="background:var(--n)">2 – Kleinhirn (0–5)</div>
+<div class="field"><div class="q">Koordination</div><div class="opts">
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs2" value="0" checked><span class="ind"></span><span class="t">0 – Normal</span><span class="p">0</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs2" value="1"><span class="ind"></span><span class="t">1 – Abnorme Zeichen, keine Behinderung</span><span class="p">1</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs2" value="2"><span class="ind"></span><span class="t">2 – Leichte Ataxie</span><span class="p">2</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs2" value="3"><span class="ind"></span><span class="t">3 – Mäßige Rumpf- oder Extremitätenataxie</span><span class="p">3</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs2" value="4"><span class="ind"></span><span class="t">4 – Schwere Ataxie aller Extremitäten</span><span class="p">4</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs2" value="5"><span class="ind"></span><span class="t">5 – Keine koordinierten Bewegungen möglich</span><span class="p">5</span></label>
+</div></div>
+<div class="sec-head" style="background:var(--n)">3 – Hirnstamm (0–5)</div>
+<div class="field"><div class="q">Hirnstammfunktion</div><div class="opts">
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs3" value="0" checked><span class="ind"></span><span class="t">0 – Normal</span><span class="p">0</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs3" value="1"><span class="ind"></span><span class="t">1 – Zeichen ohne Behinderung</span><span class="p">1</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs3" value="2"><span class="ind"></span><span class="t">2 – Mäßiger Nystagmus oder andere leichte Behinderung</span><span class="p">2</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs3" value="3"><span class="ind"></span><span class="t">3 – Schwerer Nystagmus, ausgeprägte Okulomotorikstörung, mäßige HN-Behinderung</span><span class="p">3</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs3" value="4"><span class="ind"></span><span class="t">4 – Ausgeprägte Dysarthrie oder andere ausgprägte Behinderung</span><span class="p">4</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs3" value="5"><span class="ind"></span><span class="t">5 – Unfähigkeit zu Schlucken oder Sprechen</span><span class="p">5</span></label>
+</div></div>
+<div class="sec-head" style="background:var(--n)">4 – Sensorium (0–6)</div>
+<div class="field"><div class="q">Sensibilität</div><div class="opts">
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs4" value="0" checked><span class="ind"></span><span class="t">0 – Normal</span><span class="p">0</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs4" value="1"><span class="ind"></span><span class="t">1 – Vibration/Graphästhesie ↓ in 1–2 Extremitäten</span><span class="p">1</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs4" value="2"><span class="ind"></span><span class="t">2 – Leichte Minderung Berührung/Schmerz/Lage in 1–2 Extremitäten</span><span class="p">2</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs4" value="3"><span class="ind"></span><span class="t">3 – Mäßige Minderung in 1–2 oder leichte in 3–4 Extremitäten</span><span class="p">3</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs4" value="4"><span class="ind"></span><span class="t">4 – Ausgeprägte Minderung in 1–2, mäßig in 3–4 oder Tiefensensibilitätsverlust</span><span class="p">4</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs4" value="5"><span class="ind"></span><span class="t">5 – Weitgehender Sensibilitätsverlust (Gesicht ausgenommen)</span><span class="p">5</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs4" value="6"><span class="ind"></span><span class="t">6 – Totaler Sensibilitätsverlust inkl. Gesicht/Rumpf</span><span class="p">6</span></label>
+</div></div>
+<div class="sec-head" style="background:var(--n)">5 – Blase & Mastdarm (0–6)</div>
+<div class="field"><div class="q">Sphinkterfunktion</div><div class="opts">
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs5" value="0" checked><span class="ind"></span><span class="t">0 – Normal</span><span class="p">0</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs5" value="1"><span class="ind"></span><span class="t">1 – Leichter Harndrang, -verzögerung oder -retention</span><span class="p">1</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs5" value="2"><span class="ind"></span><span class="t">2 – Mäßiger Harndrang/-verzögerung oder seltene Inkontinenz</span><span class="p">2</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs5" value="3"><span class="ind"></span><span class="t">3 – Häufige Harninkontinenz</span><span class="p">3</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs5" value="4"><span class="ind"></span><span class="t">4 – Fast permanenter Katheterismus erforderlich</span><span class="p">4</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs5" value="5"><span class="ind"></span><span class="t">5 – Verlust der Blasenfunktion</span><span class="p">5</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs5" value="6"><span class="ind"></span><span class="t">6 – Verlust von Blasen- und Mastdarmfunktion</span><span class="p">6</span></label>
+</div></div>
+<div class="sec-head" style="background:var(--n)">6 – Sehfunktion (0–6)</div>
+<div class="field"><div class="q">Visus / Gesichtsfeld</div><div class="opts">
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs6" value="0" checked><span class="ind"></span><span class="t">0 – Normal</span><span class="p">0</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs6" value="1"><span class="ind"></span><span class="t">1 – Skotom; korrigierte VA >0,67 (>20/30)</span><span class="p">1</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs6" value="2"><span class="ind"></span><span class="t">2 – Schlechteres Auge: VA 0,33–0,67 (20/30–20/60)</span><span class="p">2</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs6" value="3"><span class="ind"></span><span class="t">3 – Schlechteres Auge: VA 0,1–0,33 (20/60–20/200)</span><span class="p">3</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs6" value="4"><span class="ind"></span><span class="t">4 – Schlechteres Auge: VA 0,05–0,1 (20/200–2/200)</span><span class="p">4</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs6" value="5"><span class="ind"></span><span class="t">5 – Schlechteres Auge: VA <0,05 (WHO-Blindheit)</span><span class="p">5</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs6" value="6"><span class="ind"></span><span class="t">6 – Grad 5 + VA besseres Auge ≤0,33</span><span class="p">6</span></label>
+</div></div>
+<div class="sec-head" style="background:var(--n)">7 – Zerebrale Funktionen (0–5)</div>
+<div class="field"><div class="q">Kognition / Psyche</div><div class="opts">
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs7" value="0" checked><span class="ind"></span><span class="t">0 – Normal</span><span class="p">0</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs7" value="1"><span class="ind"></span><span class="t">1 – Nur Stimmungsveränderung</span><span class="p">1</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs7" value="2"><span class="ind"></span><span class="t">2 – Leichte kognitive Minderung</span><span class="p">2</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs7" value="3"><span class="ind"></span><span class="t">3 – Mäßige kognitive Minderung</span><span class="p">3</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs7" value="4"><span class="ind"></span><span class="t">4 – Ausgeprägte kognitive Minderung / chronisches Hirnsyndrom</span><span class="p">4</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="fs7" value="5"><span class="ind"></span><span class="t">5 – Demenz</span><span class="p">5</span></label>
+</div></div>
+<div class="sec-head" style="background:var(--n)">Gehfähigkeit (entscheidend ab EDSS ≥4,0)</div>
+<div class="field"><div class="q">Maximale Gehstrecke / Hilfsmittel</div><div class="opts">
+<label class="opt" onclick="R('edss')"><input type="radio" name="walk" value="0" checked><span class="ind"></span><span class="t">Unbegrenzt</span><span class="p">0</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="walk" value="1"><span class="ind"></span><span class="t">Mindestens 500 m (ggf. Pause)</span><span class="p">1</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="walk" value="2"><span class="ind"></span><span class="t">200–499 m</span><span class="p">2</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="walk" value="3"><span class="ind"></span><span class="t">100–199 m</span><span class="p">3</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="walk" value="4"><span class="ind"></span><span class="t">< 100 m</span><span class="p">4</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="walk" value="5"><span class="ind"></span><span class="t">Einseitige Gehhilfe für ca. 100 m</span><span class="p">5</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="walk" value="6"><span class="ind"></span><span class="t">Beidseitige Gehhilfe für ca. 20 m</span><span class="p">6</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="walk" value="7"><span class="ind"></span><span class="t">Rollstuhlpflichtig; Transfer selbstständig</span><span class="p">7</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="walk" value="8"><span class="ind"></span><span class="t">Weitgehend an Stuhl/Bett gebunden</span><span class="p">8</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="walk" value="9"><span class="ind"></span><span class="t">Bettlägerig</span><span class="p">9</span></label>
+</div></div>
+</form>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="R('edss')">&#10227; Berechnen</button><button type="button" class="export-btn" onclick="exportScore('edss')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('edss')">Zurücksetzen</button></div>
+<div class="note">Schätzung basiert auf Kurtzke 1983. Endgültiger EDSS immer durch klinische Gesamtbeurteilung. Ab EDSS 4,0 ist die Gehfähigkeit das entscheidende Kriterium.</div>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p>
+</section>
+
+<section id="pg-qmg" class="page" style="display:none;--cc:var(--n)">
+<div class="eye" style="background:var(--n)">Myasthenie</div>
+<h2 class="ptitle">QMG</h2>
+<div class="pfull">Quantitative Myasthenia Gravis Score</div>
+<hr class="phr">
+<div class="result" id="res-qmg"><div class="rv" id="rv-qmg">—</div><div class="rm"><span class="pill" id="rp-qmg">Auswahl treffen</span><div class="ri" id="ri-qmg"></div><div class="rr" id="rr-qmg"></div></div></div>
+<form id="f-qmg">
+<div class="field"><div class="q">Doppelbilder Seitblick</div><div class="opts">
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q1" value="0" checked><span class="ind"></span><span class="t">≥61 s</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q1" value="1"><span class="ind"></span><span class="t">11–60 s</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q1" value="2"><span class="ind"></span><span class="t">1–10 s</span><span class="p">+2</span></label>
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q1" value="3"><span class="ind"></span><span class="t">spontan</span><span class="p">+3</span></label>
+</div></div>
+<div class="field"><div class="q">Ptose Aufblick</div><div class="opts">
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q2" value="0" checked><span class="ind"></span><span class="t">≥61 s</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q2" value="1"><span class="ind"></span><span class="t">11–60 s</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q2" value="2"><span class="ind"></span><span class="t">1–10 s</span><span class="p">+2</span></label>
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q2" value="3"><span class="ind"></span><span class="t">spontan</span><span class="p">+3</span></label>
+</div></div>
+<div class="field"><div class="q">Lidschluss</div><div class="opts">
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q3" value="0" checked><span class="ind"></span><span class="t">normal</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q3" value="1"><span class="ind"></span><span class="t">vollst. geschwächt</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q3" value="2"><span class="ind"></span><span class="t">vollst. o. Wid.</span><span class="p">+2</span></label>
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q3" value="3"><span class="ind"></span><span class="t">unvollst.</span><span class="p">+3</span></label>
+</div></div>
+<div class="field"><div class="q">Schlucken 100 ml</div><div class="opts">
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q4" value="0" checked><span class="ind"></span><span class="t">normal</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q4" value="1"><span class="ind"></span><span class="t">min. Husten</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q4" value="2"><span class="ind"></span><span class="t">stark/nasal</span><span class="p">+2</span></label>
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q4" value="3"><span class="ind"></span><span class="t">nicht mögl.</span><span class="p">+3</span></label>
+</div></div>
+<div class="field"><div class="q">Sprechen 1–50</div><div class="opts">
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q5" value="0" checked><span class="ind"></span><span class="t">normal</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q5" value="1"><span class="ind"></span><span class="t">ab 30–49</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q5" value="2"><span class="ind"></span><span class="t">ab 10–29</span><span class="p">+2</span></label>
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q5" value="3"><span class="ind"></span><span class="t">ab 9</span><span class="p">+3</span></label>
+</div></div>
+<div class="field"><div class="q">Arm re 90° (s)</div><div class="opts">
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q6" value="0" checked><span class="ind"></span><span class="t">240</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q6" value="1"><span class="ind"></span><span class="t">90–239</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q6" value="2"><span class="ind"></span><span class="t">10–89</span><span class="p">+2</span></label>
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q6" value="3"><span class="ind"></span><span class="t">0–9</span><span class="p">+3</span></label>
+</div></div>
+<div class="field"><div class="q">Arm li 90° (s)</div><div class="opts">
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q7" value="0" checked><span class="ind"></span><span class="t">240</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q7" value="1"><span class="ind"></span><span class="t">90–239</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q7" value="2"><span class="ind"></span><span class="t">10–89</span><span class="p">+2</span></label>
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q7" value="3"><span class="ind"></span><span class="t">0–9</span><span class="p">+3</span></label>
+</div></div>
+<div class="field"><div class="q">FVC % Soll</div><div class="opts">
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q8" value="0" checked><span class="ind"></span><span class="t">≥80</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q8" value="1"><span class="ind"></span><span class="t">65–79</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q8" value="2"><span class="ind"></span><span class="t">50–64</span><span class="p">+2</span></label>
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q8" value="3"><span class="ind"></span><span class="t">&lt;50</span><span class="p">+3</span></label>
+</div></div>
+<div class="field"><div class="q">Handkraft re</div><div class="opts">
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q9" value="0" checked><span class="ind"></span><span class="t">normal</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q9" value="1"><span class="ind"></span><span class="t">leicht ↓</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q9" value="2"><span class="ind"></span><span class="t">mäßig ↓</span><span class="p">+2</span></label>
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q9" value="3"><span class="ind"></span><span class="t">stark ↓</span><span class="p">+3</span></label>
+</div></div>
+<div class="field"><div class="q">Handkraft li</div><div class="opts">
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q10" value="0" checked><span class="ind"></span><span class="t">normal</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q10" value="1"><span class="ind"></span><span class="t">leicht ↓</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q10" value="2"><span class="ind"></span><span class="t">mäßig ↓</span><span class="p">+2</span></label>
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q10" value="3"><span class="ind"></span><span class="t">stark ↓</span><span class="p">+3</span></label>
+</div></div>
+<div class="field"><div class="q">Kopf 45° (s)</div><div class="opts">
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q11" value="0" checked><span class="ind"></span><span class="t">120</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q11" value="1"><span class="ind"></span><span class="t">30–119</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q11" value="2"><span class="ind"></span><span class="t">1–29</span><span class="p">+2</span></label>
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q11" value="3"><span class="ind"></span><span class="t">0</span><span class="p">+3</span></label>
+</div></div>
+<div class="field"><div class="q">Bein re 45° (s)</div><div class="opts">
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q12" value="0" checked><span class="ind"></span><span class="t">100</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q12" value="1"><span class="ind"></span><span class="t">31–99</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q12" value="2"><span class="ind"></span><span class="t">1–30</span><span class="p">+2</span></label>
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q12" value="3"><span class="ind"></span><span class="t">0</span><span class="p">+3</span></label>
+</div></div>
+<div class="field"><div class="q">Bein li 45° (s)</div><div class="opts">
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q13" value="0" checked><span class="ind"></span><span class="t">100</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q13" value="1"><span class="ind"></span><span class="t">31–99</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q13" value="2"><span class="ind"></span><span class="t">1–30</span><span class="p">+2</span></label>
+<label class="opt" onclick="R('qmg')"><input type="radio" name="q13" value="3"><span class="ind"></span><span class="t">0</span><span class="p">+3</span></label>
+</div></div>
+</form>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="R('qmg')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('qmg')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('qmg')">Zurücksetzen</button></div>
+<div class="note">Relevante Änderung ≥ 3 Punkte.</div>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+
+<section id="pg-mgfa" class="page" style="display:none;--cc:var(--n)">
+<div class="eye" style="background:var(--n)">Myasthenie</div>
+<h2 class="ptitle">MGFA</h2>
+<div class="pfull">Myasthenia Gravis Foundation of America</div>
+<hr class="phr">
+<div class="result" id="res-mgfa"><div class="rv" id="rv-mgfa">—</div><div class="rm"><span class="pill" id="rp-mgfa">Auswahl treffen</span><div class="ri" id="ri-mgfa"></div><div class="rr" id="rr-mgfa"></div></div></div>
+<form id="f-mgfa">
+<div class="field"><div class="opts">
+<label class="opt cls" onclick="R('mgfa')"><input type="radio" name="cg" value="0" data-tone="good" data-desc="Nur okuläre Schwäche" data-v="Klasse I"><span class="ind"></span><span class="grade">Klasse I</span><span class="desc">Nur okuläre Schwäche</span></label>
+<label class="opt cls" onclick="R('mgfa')"><input type="radio" name="cg" value="1" data-tone="good" data-desc="Leicht generalisiert, Extremitäten betont" data-v="Klasse IIa"><span class="ind"></span><span class="grade">Klasse IIa</span><span class="desc">Leicht generalisiert, Extremitäten betont</span></label>
+<label class="opt cls" onclick="R('mgfa')"><input type="radio" name="cg" value="2" data-tone="good" data-desc="Leicht generalisiert, bulbär betont" data-v="Klasse IIb"><span class="ind"></span><span class="grade">Klasse IIb</span><span class="desc">Leicht generalisiert, bulbär betont</span></label>
+<label class="opt cls" onclick="R('mgfa')"><input type="radio" name="cg" value="3" data-tone="mid" data-desc="Mäßig, Extremitäten betont" data-v="Klasse IIIa"><span class="ind"></span><span class="grade">Klasse IIIa</span><span class="desc">Mäßig, Extremitäten betont</span></label>
+<label class="opt cls" onclick="R('mgfa')"><input type="radio" name="cg" value="4" data-tone="mid" data-desc="Mäßig, bulbär betont" data-v="Klasse IIIb"><span class="ind"></span><span class="grade">Klasse IIIb</span><span class="desc">Mäßig, bulbär betont</span></label>
+<label class="opt cls" onclick="R('mgfa')"><input type="radio" name="cg" value="5" data-tone="high" data-desc="Schwer, Extremitäten betont" data-v="Klasse IVa"><span class="ind"></span><span class="grade">Klasse IVa</span><span class="desc">Schwer, Extremitäten betont</span></label>
+<label class="opt cls" onclick="R('mgfa')"><input type="radio" name="cg" value="6" data-tone="high" data-desc="Schwer, bulbär betont" data-v="Klasse IVb"><span class="ind"></span><span class="grade">Klasse IVb</span><span class="desc">Schwer, bulbär betont</span></label>
+<label class="opt cls" onclick="R('mgfa')"><input type="radio" name="cg" value="7" data-tone="high" data-desc="Intubation = myasthene Krise" data-v="Klasse V"><span class="ind"></span><span class="grade">Klasse V</span><span class="desc">Intubation = myasthene Krise</span></label>
+</div></div>
+</form>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="R('mgfa')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('mgfa')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('mgfa')">Zurücksetzen</button></div>
+
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+
+<section id="pg-housebrackmann" class="page" style="display:none;--cc:var(--n)">
+<div class="eye" style="background:var(--n)">Hirnnerven</div>
+<h2 class="ptitle">House-Brackmann</h2>
+<div class="pfull">Graduierung periphere Fazialisparese</div>
+<hr class="phr">
+<div class="result" id="res-housebrackmann"><div class="rv" id="rv-housebrackmann">—</div><div class="rm"><span class="pill" id="rp-housebrackmann">Auswahl treffen</span><div class="ri" id="ri-housebrackmann"></div><div class="rr" id="rr-housebrackmann"></div></div></div>
+<form id="f-housebrackmann">
+<div class="field"><div class="opts">
+<label class="opt cls" onclick="R('housebrackmann')"><input type="radio" name="cg" value="0" data-tone="good" data-desc="Normale Funktion" data-v="Grad I"><span class="ind"></span><span class="grade">Grad I</span><span class="desc">Normale Funktion</span></label>
+<label class="opt cls" onclick="R('housebrackmann')"><input type="radio" name="cg" value="1" data-tone="good" data-desc="Leichte Dysfunktion; Lidschluss komplett mit minimaler Anstrengung" data-v="Grad II"><span class="ind"></span><span class="grade">Grad II</span><span class="desc">Leichte Dysfunktion; Lidschluss komplett mit minimaler Anstrengung</span></label>
+<label class="opt cls" onclick="R('housebrackmann')"><input type="radio" name="cg" value="2" data-tone="mid" data-desc="Mäßige Dysfunktion; Lidschluss komplett mit Anstrengung; Synkinesien" data-v="Grad III"><span class="ind"></span><span class="grade">Grad III</span><span class="desc">Mäßige Dysfunktion; Lidschluss komplett mit Anstrengung; Synkinesien</span></label>
+<label class="opt cls" onclick="R('housebrackmann')"><input type="radio" name="cg" value="3" data-tone="high" data-desc="Mäßig schwer; Stirn ohne Bewegung; Lidschluss unvollständig" data-v="Grad IV"><span class="ind"></span><span class="grade">Grad IV</span><span class="desc">Mäßig schwer; Stirn ohne Bewegung; Lidschluss unvollständig</span></label>
+<label class="opt cls" onclick="R('housebrackmann')"><input type="radio" name="cg" value="4" data-tone="high" data-desc="Schwer; nur gerade erkennbare Bewegung; Lidschluss unvollständig" data-v="Grad V"><span class="ind"></span><span class="grade">Grad V</span><span class="desc">Schwer; nur gerade erkennbare Bewegung; Lidschluss unvollständig</span></label>
+<label class="opt cls" onclick="R('housebrackmann')"><input type="radio" name="cg" value="5" data-tone="high" data-desc="Komplette Lähmung" data-v="Grad VI"><span class="ind"></span><span class="grade">Grad VI</span><span class="desc">Komplette Lähmung</span></label>
+</div></div>
+</form>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="R('housebrackmann')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('housebrackmann')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('housebrackmann')">Zurücksetzen</button></div>
+<div class="note">Ab Grad IV: Hornhautschutz beachten.</div>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+
+<section id="pg-spetzler" class="page" style="display:none;--cc:var(--n)">
+<div class="eye" style="background:var(--n)">AVM</div>
+<h2 class="ptitle">Spetzler-Martin</h2>
+<div class="pfull">Graduierung zerebraler AVM</div>
+<hr class="phr">
+<div class="result" id="res-spetzler"><div class="rv" id="rv-spetzler">—</div><div class="rm"><span class="pill" id="rp-spetzler">Auswahl treffen</span><div class="ri" id="ri-spetzler"></div><div class="rr" id="rr-spetzler"></div></div></div>
+<form id="f-spetzler">
+<div class="field"><div class="q">Größe</div><div class="opts">
+<label class="opt" onclick="R('spetzler')"><input type="radio" name="s1" value="1" checked><span class="ind"></span><span class="t">&lt;3 cm</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('spetzler')"><input type="radio" name="s1" value="2"><span class="ind"></span><span class="t">3–6 cm</span><span class="p">+2</span></label>
+<label class="opt" onclick="R('spetzler')"><input type="radio" name="s1" value="3"><span class="ind"></span><span class="t">&gt;6 cm</span><span class="p">+3</span></label>
+</div></div>
+<div class="field"><label class="opt is-check" onclick="R('spetzler')"><input type="checkbox" name="s2" value="1"><span class="ind"></span><span class="t">Eloquentes Areal</span><span class="p">+1</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('spetzler')"><input type="checkbox" name="s3" value="1"><span class="ind"></span><span class="t">Tiefe venöse Drainage</span><span class="p">+1</span></label></div>
+</form>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="R('spetzler')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('spetzler')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('spetzler')">Zurücksetzen</button></div>
+
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+
+<section id="pg-phases" class="page" style="display:none;--cc:var(--n)">
+<div class="eye" style="background:var(--n)">Aneurysma</div>
+<h2 class="ptitle">PHASES-Score</h2>
+<div class="pfull">5-Jahres-Rupturrisiko inzidentelles intrakranielles Aneurysma</div>
+<hr class="phr">
+<div class="result" id="res-phases"><div class="rv" id="rv-phases">—</div><div class="rm"><span class="pill" id="rp-phases">Auswahl treffen</span><div class="ri" id="ri-phases"></div><div class="rr" id="rr-phases"></div></div></div>
+<form id="f-phases">
+<div class="field"><div class="q">Population (Herkunft)</div><div class="opts">
+<label class="opt" onclick="R('phases')"><input type="radio" name="ph_pop" value="0" checked><span class="ind"></span><span class="t">Nordamerika / Europa (nicht FIN) → 0</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('phases')"><input type="radio" name="ph_pop" value="3"><span class="ind"></span><span class="t">Japan → 3</span><span class="p">+3</span></label>
+<label class="opt" onclick="R('phases')"><input type="radio" name="ph_pop" value="5"><span class="ind"></span><span class="t">Finnland → 5</span><span class="p">+5</span></label>
+</div></div>
+<div class="field"><label class="opt is-check" onclick="R('phases')"><input type="checkbox" name="ph_htn" value="1"><span class="ind"></span><span class="t">Hypertonie (bekannt)</span><span class="p">+1</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('phases')"><input type="checkbox" name="ph_age" value="1"><span class="ind"></span><span class="t">Alter ≥ 70 Jahre</span><span class="p">+1</span></label></div>
+<div class="field"><div class="q">Aneurysmadurchmesser</div><div class="opts">
+<label class="opt" onclick="R('phases')"><input type="radio" name="ph_size" value="0" checked><span class="ind"></span><span class="t">&lt;7 mm → 0</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('phases')"><input type="radio" name="ph_size" value="3"><span class="ind"></span><span class="t">7,0–9,9 mm → 3</span><span class="p">+3</span></label>
+<label class="opt" onclick="R('phases')"><input type="radio" name="ph_size" value="6"><span class="ind"></span><span class="t">10,0–19,9 mm → 6</span><span class="p">+6</span></label>
+<label class="opt" onclick="R('phases')"><input type="radio" name="ph_size" value="10"><span class="ind"></span><span class="t">≥20 mm → 10</span><span class="p">+10</span></label>
+</div></div>
+<div class="field"><label class="opt is-check" onclick="R('phases')"><input type="checkbox" name="ph_sah" value="1"><span class="ind"></span><span class="t">Frühere SAB aus einem anderen Aneurysma</span><span class="p">+1</span></label></div>
+<div class="field"><div class="q">Lokalisation</div><div class="opts">
+<label class="opt" onclick="R('phases')"><input type="radio" name="ph_site" value="0" checked><span class="ind"></span><span class="t">A. cerebri media (MCA) → 0</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('phases')"><input type="radio" name="ph_site" value="2"><span class="ind"></span><span class="t">ACA / ICA (nicht PComA, nicht Karotishöhle) → 2</span><span class="p">+2</span></label>
+<label class="opt" onclick="R('phases')"><input type="radio" name="ph_site" value="4"><span class="ind"></span><span class="t">Hintere Zirkulation / PComA / Karotishöhle → 4</span><span class="p">+4</span></label>
+</div></div>
+</form>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="R('phases')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('phases')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('phases')">Zurücksetzen</button></div>
+<div class="note">Greving et al., Lancet Neurology 2014. Risiken: Punkte 0–2: 0,4 %; 3: 0,7 %; 4: 0,9 %; 5: 1,3 %; 6: 1,7 %; 7: 2,4 %; 8: 3,2 %; 9: 4,3 %; 10: 5,3 %; 11: 7,2 %; ≥12: ≥9,5 %</div>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+
+<section id="pg-bwps" class="page" style="display:none;--cc:var(--o)">
+<div class="eye" style="background:var(--o)">Schilddrüse</div>
+<h2 class="ptitle">Burch-Wartofsky</h2>
+<div class="pfull">Punkteskala thyreotoxische Krise</div>
+<hr class="phr">
+<div class="result" id="res-bwps"><div class="rv" id="rv-bwps">—</div><div class="rm"><span class="pill" id="rp-bwps">Auswahl treffen</span><div class="ri" id="ri-bwps"></div><div class="rr" id="rr-bwps"></div></div></div>
+<form id="f-bwps">
+<div class="field"><div class="q">Temperatur (°C)</div><div class="opts">
+<label class="opt" onclick="R('bwps')"><input type="radio" name="b1" value="0" checked><span class="ind"></span><span class="t">&lt;37,2 → 0</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('bwps')"><input type="radio" name="b1" value="5"><span class="ind"></span><span class="t">37,2–37,7 → 5</span><span class="p">+5</span></label>
+<label class="opt" onclick="R('bwps')"><input type="radio" name="b1" value="10"><span class="ind"></span><span class="t">37,8–38,3 → 10</span><span class="p">+10</span></label>
+<label class="opt" onclick="R('bwps')"><input type="radio" name="b1" value="15"><span class="ind"></span><span class="t">38,4–38,8 → 15</span><span class="p">+15</span></label>
+<label class="opt" onclick="R('bwps')"><input type="radio" name="b1" value="20"><span class="ind"></span><span class="t">38,9–39,3 → 20</span><span class="p">+20</span></label>
+<label class="opt" onclick="R('bwps')"><input type="radio" name="b1" value="25"><span class="ind"></span><span class="t">39,4–39,9 → 25</span><span class="p">+25</span></label>
+<label class="opt" onclick="R('bwps')"><input type="radio" name="b1" value="30"><span class="ind"></span><span class="t">≥40,0 → 30</span><span class="p">+30</span></label>
+</div></div>
+<div class="field"><div class="q">Herzfrequenz (/min)</div><div class="opts">
+<label class="opt" onclick="R('bwps')"><input type="radio" name="b2" value="0" checked><span class="ind"></span><span class="t">&lt;90 → 0</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('bwps')"><input type="radio" name="b2" value="5"><span class="ind"></span><span class="t">90–109 → 5</span><span class="p">+5</span></label>
+<label class="opt" onclick="R('bwps')"><input type="radio" name="b2" value="10"><span class="ind"></span><span class="t">110–119 → 10</span><span class="p">+10</span></label>
+<label class="opt" onclick="R('bwps')"><input type="radio" name="b2" value="15"><span class="ind"></span><span class="t">120–129 → 15</span><span class="p">+15</span></label>
+<label class="opt" onclick="R('bwps')"><input type="radio" name="b2" value="20"><span class="ind"></span><span class="t">130–139 → 20</span><span class="p">+20</span></label>
+<label class="opt" onclick="R('bwps')"><input type="radio" name="b2" value="25"><span class="ind"></span><span class="t">≥140 → 25</span><span class="p">+25</span></label>
+</div></div>
+<div class="field"><label class="opt is-check" onclick="R('bwps')"><input type="checkbox" name="b3" value="10"><span class="ind"></span><span class="t">Vorhofflimmern</span><span class="p">+10</span></label></div>
+<div class="field"><div class="q">Herzinsuffizienz</div><div class="opts">
+<label class="opt" onclick="R('bwps')"><input type="radio" name="b4" value="0" checked><span class="ind"></span><span class="t">keine → 0</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('bwps')"><input type="radio" name="b4" value="5"><span class="ind"></span><span class="t">leicht → 5</span><span class="p">+5</span></label>
+<label class="opt" onclick="R('bwps')"><input type="radio" name="b4" value="10"><span class="ind"></span><span class="t">mäßig → 10</span><span class="p">+10</span></label>
+<label class="opt" onclick="R('bwps')"><input type="radio" name="b4" value="15"><span class="ind"></span><span class="t">schwer → 15</span><span class="p">+15</span></label>
+</div></div>
+<div class="field"><div class="q">GI-hepatisch</div><div class="opts">
+<label class="opt" onclick="R('bwps')"><input type="radio" name="b5" value="0" checked><span class="ind"></span><span class="t">keine → 0</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('bwps')"><input type="radio" name="b5" value="10"><span class="ind"></span><span class="t">mäßig → 10</span><span class="p">+10</span></label>
+<label class="opt" onclick="R('bwps')"><input type="radio" name="b5" value="20"><span class="ind"></span><span class="t">schwer/Ikterus → 20</span><span class="p">+20</span></label>
+</div></div>
+<div class="field"><div class="q">ZNS</div><div class="opts">
+<label class="opt" onclick="R('bwps')"><input type="radio" name="b6" value="0" checked><span class="ind"></span><span class="t">keine → 0</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('bwps')"><input type="radio" name="b6" value="10"><span class="ind"></span><span class="t">Agitation → 10</span><span class="p">+10</span></label>
+<label class="opt" onclick="R('bwps')"><input type="radio" name="b6" value="20"><span class="ind"></span><span class="t">Delir/Psychose → 20</span><span class="p">+20</span></label>
+<label class="opt" onclick="R('bwps')"><input type="radio" name="b6" value="30"><span class="ind"></span><span class="t">Krampf/Koma → 30</span><span class="p">+30</span></label>
+</div></div>
+<div class="field"><label class="opt is-check" onclick="R('bwps')"><input type="checkbox" name="b7" value="10"><span class="ind"></span><span class="t">Auslösendes Ereignis</span><span class="p">+10</span></label></div>
+</form>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="R('bwps')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('bwps')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('bwps')">Zurücksetzen</button></div>
+
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+
+<section id="pg-child" class="page" style="display:none;--cc:var(--o)">
+<div class="eye" style="background:var(--o)">Leber</div>
+<h2 class="ptitle">Child-Pugh</h2>
+<div class="pfull">Leberzirrhose – Schweregrad</div>
+<hr class="phr">
+<div class="result" id="res-child"><div class="rv" id="rv-child">—</div><div class="rm"><span class="pill" id="rp-child">Auswahl treffen</span><div class="ri" id="ri-child"></div><div class="rr" id="rr-child"></div></div></div>
+<form id="f-child">
+<div class="field"><div class="q">Bilirubin (µmol/l)</div><div class="opts">
+<label class="opt" onclick="R('child')"><input type="radio" name="c1" value="1" checked><span class="ind"></span><span class="t">&lt;34 → 1 Pkt</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('child')"><input type="radio" name="c1" value="2"><span class="ind"></span><span class="t">34–50 → 2 Pkt</span><span class="p">+2</span></label>
+<label class="opt" onclick="R('child')"><input type="radio" name="c1" value="3"><span class="ind"></span><span class="t">&gt;50 → 3 Pkt</span><span class="p">+3</span></label>
+</div></div>
+<div class="field"><div class="q">Albumin (g/l)</div><div class="opts">
+<label class="opt" onclick="R('child')"><input type="radio" name="c2" value="1" checked><span class="ind"></span><span class="t">≥35 → 1 Pkt</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('child')"><input type="radio" name="c2" value="2"><span class="ind"></span><span class="t">28–34 → 2 Pkt</span><span class="p">+2</span></label>
+<label class="opt" onclick="R('child')"><input type="radio" name="c2" value="3"><span class="ind"></span><span class="t">&lt;28 → 3 Pkt</span><span class="p">+3</span></label>
+</div></div>
+<div class="field"><div class="q">INR</div><div class="opts">
+<label class="opt" onclick="R('child')"><input type="radio" name="c3" value="1" checked><span class="ind"></span><span class="t">&lt;1,7 → 1 Pkt</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('child')"><input type="radio" name="c3" value="2"><span class="ind"></span><span class="t">1,7–2,3 → 2 Pkt</span><span class="p">+2</span></label>
+<label class="opt" onclick="R('child')"><input type="radio" name="c3" value="3"><span class="ind"></span><span class="t">&gt;2,3 → 3 Pkt</span><span class="p">+3</span></label>
+</div></div>
+<div class="field"><div class="q">Aszites</div><div class="opts">
+<label class="opt" onclick="R('child')"><input type="radio" name="c4" value="1" checked><span class="ind"></span><span class="t">kein → 1 Pkt</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('child')"><input type="radio" name="c4" value="2"><span class="ind"></span><span class="t">leicht (kontrolliert) → 2 Pkt</span><span class="p">+2</span></label>
+<label class="opt" onclick="R('child')"><input type="radio" name="c4" value="3"><span class="ind"></span><span class="t">mäßig–refraktär → 3 Pkt</span><span class="p">+3</span></label>
+</div></div>
+<div class="field"><div class="q">Enzephalopathie</div><div class="opts">
+<label class="opt" onclick="R('child')"><input type="radio" name="c5" value="1" checked><span class="ind"></span><span class="t">keine → 1 Pkt</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('child')"><input type="radio" name="c5" value="2"><span class="ind"></span><span class="t">Grad I–II → 2 Pkt</span><span class="p">+2</span></label>
+<label class="opt" onclick="R('child')"><input type="radio" name="c5" value="3"><span class="ind"></span><span class="t">Grad III–IV → 3 Pkt</span><span class="p">+3</span></label>
+</div></div>
+</form>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="R('child')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('child')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('child')">Zurücksetzen</button></div>
+<div class="note">Umrechnung Bilirubin: mg/dl × 17,1 = µmol/l (z.B. 2 mg/dl ≈ 34 µmol/l). Albumin: g/dl × 10 = g/l.</div>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+
+<section id="pg-meld" class="page" style="display:none;--cc:var(--o)">
+<div class="eye" style="background:var(--o)">Leber</div>
+<h2 class="ptitle">MELD / MELD-Na</h2>
+<div class="pfull">Model for End-Stage Liver Disease</div>
+<hr class="phr">
+<div class="result" id="res-meld"><div class="rv" id="rv-meld">—</div><div class="rm"><span class="pill" id="rp-meld">Auswahl treffen</span><div class="ri" id="ri-meld"></div><div class="rr" id="rr-meld"></div></div></div>
+<form id="f-meld">
+<div class="field"><div class="q">Bilirubin</div><div class="num-row"><input type="number" inputmode="decimal" step="any" name="mbili" placeholder="z.B. 34 (≈2 mg/dl)" oninput="R('meld')" onchange="R('meld')"><span class="u">µmol/l</span></div></div>
+<div class="field"><div class="q">INR</div><div class="num-row"><input type="number" inputmode="decimal" step="any" name="minr" placeholder="z.B. 1,4" oninput="R('meld')" onchange="R('meld')"></div></div>
+<div class="field"><div class="q">Kreatinin</div><div class="num-row"><input type="number" inputmode="decimal" step="any" name="mkrea" placeholder="z.B. 106 (≈1,2 mg/dl)" oninput="R('meld')" onchange="R('meld')"><span class="u">µmol/l</span></div></div>
+<div class="field"><div class="q">Natrium (opt. → MELD-Na)</div><div class="num-row"><input type="number" inputmode="decimal" step="any" name="mna" placeholder="z.B. 134" oninput="R('meld')" onchange="R('meld')"><span class="u">mmol/l</span></div></div>
+<div class="field"><label class="opt is-check" onclick="R('meld')"><input type="checkbox" name="mdial" value="0"><span class="ind"></span><span class="t">Dialyse ≥ 2×/Woche</span></label></div>
+</form>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="R('meld')">⟳ Berechnen</button><button type="button" class="reset-btn" onclick="RST('meld')">Zurücksetzen</button></div>
+<div class="note">Bili und Krea in µmol/l. Minimum: Bili 17,1 µmol/l, Krea 88,4 µmol/l. Maximum Krea: 354 µmol/l (= bei Dialyse).</div>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+
+<section id="pg-kdigo" class="page" style="display:none;--cc:var(--o)">
+<div class="eye" style="background:var(--o)">Niere</div>
+<h2 class="ptitle">KDIGO &#8211; Niere</h2>
+<div class="pfull">eGFR-Kategorie &amp; Albuminurie kombiniert &#183; CKD-EPI-Rechner</div>
+<hr class="phr">
+<div class="dual-result">
+  <div class="result" style="--cc:#0f766e;border-top-color:#0f766e">
+    <div class="rv" id="rv-kdigo-g">&#8212;</div>
+    <div class="rm"><span class="pill" id="rp-kdigo-g">eGFR-Kategorie</span>
+    <div class="ri" id="ri-kdigo-g"></div>
+    <div class="rr" id="rr-kdigo-g"></div></div></div>
+  <div class="result" style="--cc:#6d28d9;border-top-color:#6d28d9">
+    <div class="rv" id="rv-kdigo-a">&#8212;</div>
+    <div class="rm"><span class="pill" id="rp-kdigo-a">Albuminurie</span>
+    <div class="ri" id="ri-kdigo-a"></div>
+    <div class="rr" id="rr-kdigo-a"></div></div></div>
+</div>
+<div class="result" id="res-kdigo-risk" style="display:none;--cc:#64748b;border-top-color:#64748b"><div class="rv" style="font-size:20px;min-width:0" id="rv-kdigo-risk">&#8212;</div><div class="rm"><span class="pill" id="rp-kdigo-risk">Progressionsrisiko</span><div class="ri" id="ri-kdigo-risk"></div></div></div>
+<form id="f-kdigo">
+<div class="sec-head" style="background:#475569">Demographische Daten (für Berechnung erforderlich)</div>
+<div class="field"><div class="q">Alter</div><div class="num-row"><input type="number" inputmode="decimal" step="any" name="kage" placeholder="z.B. 65" oninput="R('kdigo')" onchange="R('kdigo')"><span class="u">Jahre</span></div></div>
+<div class="field"><div class="q">Geschlecht</div><div class="opts">
+<label class="opt" onclick="R('kdigo')"><input type="radio" name="ksex" value="m" checked><span class="ind"></span><span class="t">männlich</span></label>
+<label class="opt" onclick="R('kdigo')"><input type="radio" name="ksex" value="f"><span class="ind"></span><span class="t">weiblich</span></label>
+</div></div>
+<div class="sec-head" style="background:#0f766e">eGFR-Berechnung &#8211; eine oder mehrere Methoden eingeben</div>
+<div class="field"><div class="q">Kreatinin</div><div class="num-row"><input type="number" inputmode="decimal" step="any" name="kkrea" placeholder="z.B. 106" oninput="R('kdigo')" onchange="R('kdigo')"><span class="u">µmol/l</span></div></div>
+<div class="field"><div class="q">Cystatin C</div><div class="num-row"><input type="number" inputmode="decimal" step="any" name="kcys" placeholder="z.B. 1,2" oninput="R('kdigo')" onchange="R('kdigo')"><span class="u">mg/l</span></div></div>
+<div class="note" style="--cc:var(--o)">Bei Eingabe beider Werte wird die genauere kombinierte CKD-EPI-Formel (Krea+CysC 2012) verwendet.</div>
+<div class="field"><div class="q">eGFR direkt (falls bereits berechnet)</div><div class="num-row"><input type="number" inputmode="decimal" step="any" name="kegfr" placeholder="z.B. 52" oninput="R('kdigo')" onchange="R('kdigo')"><span class="u">ml/min/1,73 m²</span></div></div>
+<div class="sec-head" style="background:#6d28d9">Albuminurie</div>
+<div class="field"><div class="q">Albumin-Kreatinin-Ratio (ACR)</div><div class="num-row"><input type="number" inputmode="decimal" step="any" name="kacr" placeholder="z.B. 45" oninput="R('kdigo')" onchange="R('kdigo')"><span class="u">mg/g</span></div></div>
+</form>
+<div class="btn-row">
+  <button type="button" class="calc-btn" onclick="R('kdigo')">&#10227; Berechnen</button>
+  <button type="button" class="reset-btn" onclick="RST('kdigo')">Zurücksetzen</button>
+</div>
+<div class="note">CKD-EPI Krea 2021 (race-free) &#183; CKD-EPI CysC 2012 &#183; CKD-EPI Krea+CysC 2012 (kombiniert, am genauesten).
+CKD-Diagnose: GFR &lt;60 und/oder Nierenschaden ≥32 Monate.</div>
+<p class="disc">Kurzreferenz &#8211; keine Therapieempfehlung.</p>
+</section>
+
+<section id="pg-vhf" class="page" style="display:none;--cc:var(--o)">
+<div class="eye" style="background:var(--o)">Vorhofflimmern</div>
+<h2 class="ptitle">CHA₂DS₂-VASc &amp; HAS-BLED</h2>
+<div class="pfull">Schlaganfall- und Blutungsrisiko – Items werden nur einmal abgefragt</div>
+<div class="badge-legend"><span class="badge bc">C</span> CHA₂DS₂-VASc &nbsp;·&nbsp; <span class="badge bh">H</span> HAS-BLED &nbsp;·&nbsp; beide = fließt in beide ein</div>
+<hr class="phr">
+<div class="dual-result">
+  <div class="result" style="--cc:var(--n);border-top-color:var(--n)">
+    <div class="rv" id="rv-vhf-c">—</div>
+    <div class="rm">
+      <span class="pill" id="rp-vhf-c">CHA₂DS₂-VASc</span>
+      <div class="ri" id="ri-vhf-c"></div>
+      <div class="rr" id="rr-vhf-c"></div>
+    </div>
+  </div>
+  <div class="result" style="--cc:var(--s);border-top-color:var(--s)">
+    <div class="rv" id="rv-vhf-h">—</div>
+    <div class="rm">
+      <span class="pill" id="rp-vhf-h">HAS-BLED</span>
+      <div class="ri" id="ri-vhf-h"></div>
+      <div class="rr" id="rr-vhf-h"></div>
+    </div>
+  </div>
+</div>
+<form id="f-vhf">
+<div class="sec-head" style="background:#475569">Demographische Daten</div>
+<div class="field"><div class="q"><span class="badge bc">C</span><span class="badge bh">H</span> Alter</div><div class="num-row"><input type="number" inputmode="decimal" step="any" name="age" placeholder="z.B. 72" oninput="R('vhf')" onchange="R('vhf')"><span class="u">Jahre</span></div></div>
+<div class="field"><div class="q"><span class="badge bc">C</span> Geschlecht</div><div class="opts">
+<label class="opt" onclick="R('vhf')"><input type="radio" name="sex" value="m" checked><span class="ind"></span><span class="t">männlich</span></label>
+<label class="opt" onclick="R('vhf')"><input type="radio" name="sex" value="f"><span class="ind"></span><span class="t">weiblich</span></label>
+</div></div>
+<div class="field"><div class="q"><span class="badge bh">H</span> Systolischer Blutdruck</div><div class="num-row"><input type="number" inputmode="decimal" step="any" name="sbp" placeholder="z.B. 165" oninput="R('vhf')" onchange="R('vhf')"><span class="u">mmHg</span></div></div>
+<div class="sec-head" style="background:#1d4e89">Kardiovaskuläre Risikofaktoren</div>
+<div class="field"><label class="opt is-check" onclick="R('vhf')"><input type="checkbox" name="hf" value="1"><span class="ind"></span><span class="t"><span class="badge bc">C</span> Herzinsuffizienz / LV-Dysfunktion</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('vhf')"><input type="checkbox" name="htn" value="1"><span class="ind"></span><span class="t"><span class="badge bc">C</span> Hypertonie bekannt</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('vhf')"><input type="checkbox" name="dm" value="1"><span class="ind"></span><span class="t"><span class="badge bc">C</span> Diabetes mellitus</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('vhf')"><input type="checkbox" name="vasc" value="1"><span class="ind"></span><span class="t"><span class="badge bc">C</span> Gefäßerkrankung (KHK / pAVK / Aortenplaque)</span></label></div>
+<div class="sec-head" style="background:#374151">Anamnese</div>
+<div class="field"><label class="opt is-check" onclick="R('vhf')"><input type="checkbox" name="stroke" value="1"><span class="ind"></span><span class="t"><span class="badge bc">C</span><span class="badge bh">H</span> Schlaganfall / TIA / Thromboembolie</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('vhf')"><input type="checkbox" name="bleed" value="1"><span class="ind"></span><span class="t"><span class="badge bh">H</span> Frühere Blutung oder Blutungsneigung</span></label></div>
+<div class="sec-head" style="background:#6d28d9">Weitere Kriterien</div>
+<div class="field"><label class="opt is-check" onclick="R('vhf')"><input type="checkbox" name="renal" value="1"><span class="ind"></span><span class="t"><span class="badge bh">H</span> Nierenfunktionsstörung (Krea &gt;200 µmol/l, Dialyse, Tx)</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('vhf')"><input type="checkbox" name="liver" value="1"><span class="ind"></span><span class="t"><span class="badge bh">H</span> Leberfunktionsstörung (Bili &gt;2×, AST/ALT/AP &gt;3× UNL)</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('vhf')"><input type="checkbox" name="inr" value="1"><span class="ind"></span><span class="t"><span class="badge bh">H</span> Labile INR unter VKA (TTR &lt;60 %)</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('vhf')"><input type="checkbox" name="drugs" value="1"><span class="ind"></span><span class="t"><span class="badge bh">H</span> NSAR / Thrombozytenhemmer</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('vhf')"><input type="checkbox" name="alc" value="1"><span class="ind"></span><span class="t"><span class="badge bh">H</span> Alkohol (≥8 Gläser/Woche)</span></label></div>
+</form>
+<div class="btn-row">
+  <button type="button" class="calc-btn" onclick="R('vhf')">⟳ Berechnen</button>
+  <button type="button" class="export-btn" onclick="exportScore('vhf')">📋 Kopieren</button>
+  <button type="button" class="reset-btn" onclick="RST('vhf')">Zurücksetzen</button>
+</div>
+<div class="note">OAK-Indikation: Männer ≥2 Pkt, Frauen ≥3 Pkt (ESC). &nbsp;|&nbsp; HAS-BLED ≥3: beeinflussbare Faktoren adressieren – keine OAK-Kontraindikation per se.</div>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p>
+</section>
+<section id="pg-ehra" class="page" style="display:none;--cc:var(--o)">
+<div class="eye" style="background:var(--o)">VHF</div>
+<h2 class="ptitle">EHRA</h2>
+<div class="pfull">European Heart Rhythm Association – Symptome</div>
+<hr class="phr">
+<div class="result" id="res-ehra"><div class="rv" id="rv-ehra">—</div><div class="rm"><span class="pill" id="rp-ehra">Auswahl treffen</span><div class="ri" id="ri-ehra"></div><div class="rr" id="rr-ehra"></div></div></div>
+<form id="f-ehra">
+<div class="field"><div class="opts">
+<label class="opt cls" onclick="R('ehra')"><input type="radio" name="cg" value="0" data-tone="good" data-desc="Keine Symptome" data-v="I"><span class="ind"></span><span class="grade">I</span><span class="desc">Keine Symptome</span></label>
+<label class="opt cls" onclick="R('ehra')"><input type="radio" name="cg" value="1" data-tone="good" data-desc="Mild; Alltag unbeeinträchtigt" data-v="IIa"><span class="ind"></span><span class="grade">IIa</span><span class="desc">Mild; Alltag unbeeinträchtigt</span></label>
+<label class="opt cls" onclick="R('ehra')"><input type="radio" name="cg" value="2" data-tone="mid" data-desc="Moderat; Alltag nicht beeinträchtigt aber störend" data-v="IIb"><span class="ind"></span><span class="grade">IIb</span><span class="desc">Moderat; Alltag nicht beeinträchtigt aber störend</span></label>
+<label class="opt cls" onclick="R('ehra')"><input type="radio" name="cg" value="3" data-tone="mid" data-desc="Schwer; Alltag beeinträchtigt" data-v="III"><span class="ind"></span><span class="grade">III</span><span class="desc">Schwer; Alltag beeinträchtigt</span></label>
+<label class="opt cls" onclick="R('ehra')"><input type="radio" name="cg" value="4" data-tone="high" data-desc="Behindernd; Alltag unmöglich" data-v="IV"><span class="ind"></span><span class="grade">IV</span><span class="desc">Behindernd; Alltag unmöglich</span></label>
+</div></div>
+</form>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="R('ehra')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('ehra')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('ehra')">Zurücksetzen</button></div>
+
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+
+<section id="pg-curb" class="page" style="display:none;--cc:var(--s)">
+<div class="eye" style="background:var(--s)">Pneumonie</div>
+<h2 class="ptitle">CURB-65</h2>
+<div class="pfull">Ambulant erworbene Pneumonie – Schweregrad</div>
+<hr class="phr">
+<div class="result" id="res-curb"><div class="rv" id="rv-curb">—</div><div class="rm"><span class="pill" id="rp-curb">Auswahl treffen</span><div class="ri" id="ri-curb"></div><div class="rr" id="rr-curb"></div></div></div>
+<form id="f-curb">
+<div class="field"><label class="opt is-check" onclick="R('curb')"><input type="checkbox" name="cu1" value="1"><span class="ind"></span><span class="t">C: Verwirrtheit (neu)</span><span class="p">+1</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('curb')"><input type="checkbox" name="cu2" value="1"><span class="ind"></span><span class="t">U: Urea &gt;7 mmol/l (Harnstoff &gt;7 mmol/l)</span><span class="p">+1</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('curb')"><input type="checkbox" name="cu3" value="1"><span class="ind"></span><span class="t">R: Atemfrequenz ≥30/min</span><span class="p">+1</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('curb')"><input type="checkbox" name="cu4" value="1"><span class="ind"></span><span class="t">B: RR &lt;90 syst. oder ≤60 diast. mmHg</span><span class="p">+1</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('curb')"><input type="checkbox" name="cu5" value="1"><span class="ind"></span><span class="t">65: Alter ≥65 J.</span><span class="p">+1</span></label></div>
+</form>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="R('curb')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('curb')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('curb')">Zurücksetzen</button></div>
+
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+
+<section id="pg-wellstvt" class="page" style="display:none;--cc:var(--s)">
+<div class="eye" style="background:var(--s)">Thrombose</div>
+<h2 class="ptitle">Wells (TVT)</h2>
+<div class="pfull">Vortestwahrscheinlichkeit TVT</div>
+<hr class="phr">
+<div class="result" id="res-wellstvt"><div class="rv" id="rv-wellstvt">—</div><div class="rm"><span class="pill" id="rp-wellstvt">Auswahl treffen</span><div class="ri" id="ri-wellstvt"></div><div class="rr" id="rr-wellstvt"></div></div></div>
+<form id="f-wellstvt">
+<div class="field"><label class="opt is-check" onclick="R('wellstvt')"><input type="checkbox" name="wt1" value="1"><span class="ind"></span><span class="t">Aktive Krebserkrankung</span><span class="p">+1</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('wellstvt')"><input type="checkbox" name="wt2" value="1"><span class="ind"></span><span class="t">Lähmung/Parese oder Gips</span><span class="p">+1</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('wellstvt')"><input type="checkbox" name="wt3" value="1"><span class="ind"></span><span class="t">Bettruhe &gt;3d oder OP &lt;12 Wo.</span><span class="p">+1</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('wellstvt')"><input type="checkbox" name="wt4" value="1"><span class="ind"></span><span class="t">Schmerz entlang tiefer Venen</span><span class="p">+1</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('wellstvt')"><input type="checkbox" name="wt5" value="1"><span class="ind"></span><span class="t">Gesamte Beinschwellung</span><span class="p">+1</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('wellstvt')"><input type="checkbox" name="wt6" value="1"><span class="ind"></span><span class="t">Wadenschwellung &gt;3 cm vs. Gegenseite</span><span class="p">+1</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('wellstvt')"><input type="checkbox" name="wt7" value="1"><span class="ind"></span><span class="t">Eindrückbares Ödem</span><span class="p">+1</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('wellstvt')"><input type="checkbox" name="wt8" value="1"><span class="ind"></span><span class="t">Oberflächl. Kollateralvenen</span><span class="p">+1</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('wellstvt')"><input type="checkbox" name="wt9" value="1"><span class="ind"></span><span class="t">Frühere TVT</span><span class="p">+1</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('wellstvt')"><input type="checkbox" name="wt10" value="-2"><span class="ind"></span><span class="t">Alternative Diagnose mind. so wahrsch.</span><span class="p">-2</span></label></div>
+</form>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="R('wellstvt')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('wellstvt')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('wellstvt')">Zurücksetzen</button></div>
+
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+
+<section id="pg-wellslae" class="page" style="display:none;--cc:var(--s)">
+<div class="eye" style="background:var(--s)">LAE</div>
+<h2 class="ptitle">Wells (LAE)</h2>
+<div class="pfull">Vortestwahrscheinlichkeit Lungenembolie</div>
+<hr class="phr">
+<div class="result" id="res-wellslae"><div class="rv" id="rv-wellslae">—</div><div class="rm"><span class="pill" id="rp-wellslae">Auswahl treffen</span><div class="ri" id="ri-wellslae"></div><div class="rr" id="rr-wellslae"></div></div></div>
+<form id="f-wellslae">
+<div class="field"><label class="opt is-check" onclick="R('wellslae')"><input type="checkbox" name="wl1" value="3"><span class="ind"></span><span class="t">Klinische TVT-Zeichen</span><span class="p">+3</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('wellslae')"><input type="checkbox" name="wl2" value="3"><span class="ind"></span><span class="t">LAE wahrscheinlicher als Alternativdiagnose</span><span class="p">+3</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('wellslae')"><input type="checkbox" name="wl3" value="1.5"><span class="ind"></span><span class="t">HF &gt;100/min</span><span class="p">+1.5</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('wellslae')"><input type="checkbox" name="wl4" value="1.5"><span class="ind"></span><span class="t">Immobilisation oder OP &lt;4 Wo.</span><span class="p">+1.5</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('wellslae')"><input type="checkbox" name="wl5" value="1.5"><span class="ind"></span><span class="t">Frühere TVT/LAE</span><span class="p">+1.5</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('wellslae')"><input type="checkbox" name="wl6" value="1"><span class="ind"></span><span class="t">Hämoptyse</span><span class="p">+1</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('wellslae')"><input type="checkbox" name="wl7" value="1"><span class="ind"></span><span class="t">Malignom</span><span class="p">+1</span></label></div>
+</form>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="R('wellslae')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('wellslae')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('wellslae')">Zurücksetzen</button></div>
+
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+
+<section id="pg-qsofa" class="page" style="display:none;--cc:var(--s)">
+<div class="eye" style="background:var(--s)">Sepsis</div>
+<h2 class="ptitle">qSOFA</h2>
+<div class="pfull">quick Sequential Organ Failure Assessment</div>
+<hr class="phr">
+<div class="result" id="res-qsofa"><div class="rv" id="rv-qsofa">—</div><div class="rm"><span class="pill" id="rp-qsofa">Auswahl treffen</span><div class="ri" id="ri-qsofa"></div><div class="rr" id="rr-qsofa"></div></div></div>
+<form id="f-qsofa">
+<div class="field"><label class="opt is-check" onclick="R('qsofa')"><input type="checkbox" name="qs1" value="1"><span class="ind"></span><span class="t">AF ≥22/min</span><span class="p">+1</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('qsofa')"><input type="checkbox" name="qs2" value="1"><span class="ind"></span><span class="t">Bewusstsein verändert (GCS &lt;15)</span><span class="p">+1</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('qsofa')"><input type="checkbox" name="qs3" value="1"><span class="ind"></span><span class="t">RR syst. ≤100 mmHg</span><span class="p">+1</span></label></div>
+</form>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="R('qsofa')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('qsofa')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('qsofa')">Zurücksetzen</button></div>
+
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+
+<section id="pg-sofa" class="page" style="display:none;--cc:var(--s)">
+<div class="eye" style="background:var(--s)">Intensiv</div>
+<h2 class="ptitle">SOFA</h2>
+<div class="pfull">Sequential Organ Failure Assessment</div>
+<hr class="phr">
+<div class="result" id="res-sofa"><div class="rv" id="rv-sofa">—</div><div class="rm"><span class="pill" id="rp-sofa">Auswahl treffen</span><div class="ri" id="ri-sofa"></div><div class="rr" id="rr-sofa"></div></div></div>
+<form id="f-sofa">
+<div class="field"><div class="q">PaO₂/FiO₂ (mmHg)</div><div class="opts">
+<label class="opt" onclick="R('sofa')"><input type="radio" name="sf1" value="0" checked><span class="ind"></span><span class="t">≥400 → 0</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('sofa')"><input type="radio" name="sf1" value="1"><span class="ind"></span><span class="t">&lt;400 → 1</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('sofa')"><input type="radio" name="sf1" value="2"><span class="ind"></span><span class="t">&lt;300 → 2</span><span class="p">+2</span></label>
+<label class="opt" onclick="R('sofa')"><input type="radio" name="sf1" value="3"><span class="ind"></span><span class="t">&lt;200 + Beat. → 3</span><span class="p">+3</span></label>
+<label class="opt" onclick="R('sofa')"><input type="radio" name="sf1" value="4"><span class="ind"></span><span class="t">&lt;100 + Beat. → 4</span><span class="p">+4</span></label>
+</div></div>
+<div class="field"><div class="q">Thrombozyten (×10⁹/l)</div><div class="opts">
+<label class="opt" onclick="R('sofa')"><input type="radio" name="sf2" value="0" checked><span class="ind"></span><span class="t">≥150 → 0</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('sofa')"><input type="radio" name="sf2" value="1"><span class="ind"></span><span class="t">&lt;150 → 1</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('sofa')"><input type="radio" name="sf2" value="2"><span class="ind"></span><span class="t">&lt;100 → 2</span><span class="p">+2</span></label>
+<label class="opt" onclick="R('sofa')"><input type="radio" name="sf2" value="3"><span class="ind"></span><span class="t">&lt;50 → 3</span><span class="p">+3</span></label>
+<label class="opt" onclick="R('sofa')"><input type="radio" name="sf2" value="4"><span class="ind"></span><span class="t">&lt;20 → 4</span><span class="p">+4</span></label>
+</div></div>
+<div class="field"><div class="q">Bilirubin (µmol/l)</div><div class="opts">
+<label class="opt" onclick="R('sofa')"><input type="radio" name="sf3" value="0" checked><span class="ind"></span><span class="t">&lt;20 → 0</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('sofa')"><input type="radio" name="sf3" value="1"><span class="ind"></span><span class="t">20–32 → 1</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('sofa')"><input type="radio" name="sf3" value="2"><span class="ind"></span><span class="t">33–101 → 2</span><span class="p">+2</span></label>
+<label class="opt" onclick="R('sofa')"><input type="radio" name="sf3" value="3"><span class="ind"></span><span class="t">102–204 → 3</span><span class="p">+3</span></label>
+<label class="opt" onclick="R('sofa')"><input type="radio" name="sf3" value="4"><span class="ind"></span><span class="t">&gt;204 → 4</span><span class="p">+4</span></label>
+</div></div>
+<div class="field"><div class="q">Kreislauf</div><div class="opts">
+<label class="opt" onclick="R('sofa')"><input type="radio" name="sf4" value="0" checked><span class="ind"></span><span class="t">MAP ≥70 mmHg → 0</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('sofa')"><input type="radio" name="sf4" value="1"><span class="ind"></span><span class="t">MAP &lt;70 → 1</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('sofa')"><input type="radio" name="sf4" value="2"><span class="ind"></span><span class="t">Vasopressor nied. → 2</span><span class="p">+2</span></label>
+<label class="opt" onclick="R('sofa')"><input type="radio" name="sf4" value="3"><span class="ind"></span><span class="t">mittel → 3</span><span class="p">+3</span></label>
+<label class="opt" onclick="R('sofa')"><input type="radio" name="sf4" value="4"><span class="ind"></span><span class="t">hoch → 4</span><span class="p">+4</span></label>
+</div></div>
+<div class="field"><div class="q">GCS</div><div class="opts">
+<label class="opt" onclick="R('sofa')"><input type="radio" name="sf5" value="0" checked><span class="ind"></span><span class="t">15 → 0</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('sofa')"><input type="radio" name="sf5" value="1"><span class="ind"></span><span class="t">13–14 → 1</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('sofa')"><input type="radio" name="sf5" value="2"><span class="ind"></span><span class="t">10–12 → 2</span><span class="p">+2</span></label>
+<label class="opt" onclick="R('sofa')"><input type="radio" name="sf5" value="3"><span class="ind"></span><span class="t">6–9 → 3</span><span class="p">+3</span></label>
+<label class="opt" onclick="R('sofa')"><input type="radio" name="sf5" value="4"><span class="ind"></span><span class="t">&lt;6 → 4</span><span class="p">+4</span></label>
+</div></div>
+<div class="field"><div class="q">Kreatinin (µmol/l)</div><div class="opts">
+<label class="opt" onclick="R('sofa')"><input type="radio" name="sf6" value="0" checked><span class="ind"></span><span class="t">&lt;106 → 0</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('sofa')"><input type="radio" name="sf6" value="1"><span class="ind"></span><span class="t">106–168 → 1</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('sofa')"><input type="radio" name="sf6" value="2"><span class="ind"></span><span class="t">169–300 → 2</span><span class="p">+2</span></label>
+<label class="opt" onclick="R('sofa')"><input type="radio" name="sf6" value="3"><span class="ind"></span><span class="t">301–433 → 3</span><span class="p">+3</span></label>
+<label class="opt" onclick="R('sofa')"><input type="radio" name="sf6" value="4"><span class="ind"></span><span class="t">&gt;433 / Urin &lt;200 ml/d → 4</span><span class="p">+4</span></label>
+</div></div>
+</form>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="R('sofa')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('sofa')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('sofa')">Zurücksetzen</button></div>
+<div class="note">Sepsis-3: Infektion + SOFA-Anstieg ≥2. Bili: 20 µmol/l ≈ 1,2 mg/dl. Krea: 106 µmol/l ≈ 1,2 mg/dl.</div>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+
+<section id="pg-gbs" class="page" style="display:none;--cc:var(--s)">
+<div class="eye" style="background:var(--s)">GI-Blutung</div>
+<h2 class="ptitle">Glasgow-Blatchford</h2>
+<div class="pfull">GBS – obere GI-Blutung</div>
+<hr class="phr">
+<div class="result" id="res-gbs"><div class="rv" id="rv-gbs">—</div><div class="rm"><span class="pill" id="rp-gbs">Auswahl treffen</span><div class="ri" id="ri-gbs"></div><div class="rr" id="rr-gbs"></div></div></div>
+<form id="f-gbs">
+<div class="field"><div class="q">Geschlecht</div><div class="opts">
+<label class="opt" onclick="R('gbs')"><input type="radio" name="gbs_sex" value="0" checked><span class="ind"></span><span class="t">männlich</span></label>
+<label class="opt" onclick="R('gbs')"><input type="radio" name="gbs_sex" value="1"><span class="ind"></span><span class="t">weiblich</span></label>
+</div></div>
+<div class="field"><div class="q">Harnstoff</div><div class="num-row"><input type="number" inputmode="decimal" step="any" name="gbs_urea" placeholder="z.B. 9,2" oninput="R('gbs')" onchange="R('gbs')"><span class="u">mmol/l</span></div></div>
+<div class="field"><div class="q">Hämoglobin</div><div class="num-row"><input type="number" inputmode="decimal" step="any" name="gbs_hb" placeholder="z.B. 7,5" oninput="R('gbs')" onchange="R('gbs')"><span class="u">mmol/l</span></div></div>
+<div class="field"><div class="q">RR syst.</div><div class="num-row"><input type="number" inputmode="decimal" step="any" name="gbs_sbp" placeholder="z.B. 104" oninput="R('gbs')" onchange="R('gbs')"><span class="u">mmHg</span></div></div>
+<div class="field"><label class="opt is-check" onclick="R('gbs')"><input type="checkbox" name="gbs_puls" value="1"><span class="ind"></span><span class="t">Puls ≥100/min</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('gbs')"><input type="checkbox" name="gbs_mel" value="1"><span class="ind"></span><span class="t">Meläna</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('gbs')"><input type="checkbox" name="gbs_syn" value="2"><span class="ind"></span><span class="t">Synkope</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('gbs')"><input type="checkbox" name="gbs_leb" value="2"><span class="ind"></span><span class="t">Lebererkrankung</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('gbs')"><input type="checkbox" name="gbs_herz" value="2"><span class="ind"></span><span class="t">Herzinsuffizienz</span></label></div>
+</form>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="R('gbs')">⟳ Berechnen</button><button type="button" class="reset-btn" onclick="RST('gbs')">Zurücksetzen</button></div>
+<div class="note">Harnstoff mmol/l, Hb mmol/l. Score 0 → ambulant erwägen. Umrechnung: Hb g/dl × 0,621 = mmol/l</div>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+
+<section id="pg-nyha" class="page" style="display:none;--cc:var(--s)">
+<div class="eye" style="background:var(--s)">Herzinsuffizienz</div>
+<h2 class="ptitle">NYHA</h2>
+<div class="pfull">New York Heart Association</div>
+<hr class="phr">
+<div class="result" id="res-nyha"><div class="rv" id="rv-nyha">—</div><div class="rm"><span class="pill" id="rp-nyha">Auswahl treffen</span><div class="ri" id="ri-nyha"></div><div class="rr" id="rr-nyha"></div></div></div>
+<form id="f-nyha">
+<div class="field"><div class="opts">
+<label class="opt cls" onclick="R('nyha')"><input type="radio" name="cg" value="0" data-tone="good" data-desc="Keine Beschwerden bei normaler Belastung" data-v="I"><span class="ind"></span><span class="grade">I</span><span class="desc">Keine Beschwerden bei normaler Belastung</span></label>
+<label class="opt cls" onclick="R('nyha')"><input type="radio" name="cg" value="1" data-tone="good" data-desc="Leichte Einschränkung bei stärkerer Belastung" data-v="II"><span class="ind"></span><span class="grade">II</span><span class="desc">Leichte Einschränkung bei stärkerer Belastung</span></label>
+<label class="opt cls" onclick="R('nyha')"><input type="radio" name="cg" value="2" data-tone="mid" data-desc="Deutliche Einschränkung bei leichter Belastung" data-v="III"><span class="ind"></span><span class="grade">III</span><span class="desc">Deutliche Einschränkung bei leichter Belastung</span></label>
+<label class="opt cls" onclick="R('nyha')"><input type="radio" name="cg" value="3" data-tone="high" data-desc="Beschwerden in Ruhe" data-v="IV"><span class="ind"></span><span class="grade">IV</span><span class="desc">Beschwerden in Ruhe</span></label>
+</div></div>
+</form>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="R('nyha')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('nyha')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('nyha')">Zurücksetzen</button></div>
+
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+
+<section id="pg-centor" class="page" style="display:none;--cc:var(--s)">
+<div class="eye" style="background:var(--s)">HNO</div>
+<h2 class="ptitle">Centor / McIsaac</h2>
+<div class="pfull">Streptokokken-Pharyngitis</div>
+<hr class="phr">
+<div class="result" id="res-centor"><div class="rv" id="rv-centor">—</div><div class="rm"><span class="pill" id="rp-centor">Auswahl treffen</span><div class="ri" id="ri-centor"></div><div class="rr" id="rr-centor"></div></div></div>
+<form id="f-centor">
+<div class="field"><label class="opt is-check" onclick="R('centor')"><input type="checkbox" name="ct1" value="1"><span class="ind"></span><span class="t">Fieber &gt;38 °C</span><span class="p">+1</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('centor')"><input type="checkbox" name="ct2" value="1"><span class="ind"></span><span class="t">Fehlender Husten</span><span class="p">+1</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('centor')"><input type="checkbox" name="ct3" value="1"><span class="ind"></span><span class="t">Halslymphknoten</span><span class="p">+1</span></label></div>
+<div class="field"><label class="opt is-check" onclick="R('centor')"><input type="checkbox" name="ct4" value="1"><span class="ind"></span><span class="t">Tonsillenexsudat</span><span class="p">+1</span></label></div>
+<div class="field"><div class="q">Alter</div><div class="opts">
+<label class="opt" onclick="R('centor')"><input type="radio" name="ct5" value="-1" checked><span class="ind"></span><span class="t">≥45 J.</span><span class="p">-1</span></label>
+<label class="opt" onclick="R('centor')"><input type="radio" name="ct5" value="0"><span class="ind"></span><span class="t">15–44 J.</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('centor')"><input type="radio" name="ct5" value="1"><span class="ind"></span><span class="t">3–14 J.</span><span class="p">+1</span></label>
+</div></div>
+</form>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="R('centor')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('centor')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('centor')">Zurücksetzen</button></div>
+
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+
+<script>var BD={'nihss':[[0,0,'kein Defizit','good'],[1,4,'leicht','good'],[5,15,'moderat','mid'],[16,20,'moderat-schwer','high'],[21,42,'schwer','high']],'rope':[[0,3,'PFO wahrscheinlich inzidentell (≈0 % attributabel)','good'],[4,6,'PFO möglicherweise kausal (≈36–46 %)','mid'],[7,10,'PFO wahrscheinlich kausal (≈62–72 %) – PFO-Verschluss erwägen','high']],'gcs':[[3,8,'schwer – Atemweg sichern','high'],[9,12,'mittelschwer','mid'],[13,15,'leicht','good']],'abcd2':[[0,3,'niedriges Risiko (≈1 %/2d)','good'],[4,5,'moderat (≈4 %)','mid'],[6,7,'hoch (≈8 %)','high']],'ich':[[0,0,'≈0 % 30-Tage-Mortalität','good'],[1,1,'≈13 %','mid'],[2,2,'≈26 %','mid'],[3,3,'≈72 %','high'],[4,4,'≈94 %','high'],[5,6,'≈100 %','high']],'qmg':[[0,5,'keine/minimale Schwäche','good'],[6,15,'leicht–mäßig','mid'],[16,39,'mäßig–schwer','high']],'spetzler':[[1,2,'niedriges OP-Risiko','good'],[3,3,'intermediär','mid'],[4,5,'hohes OP-Risiko','high']],'phases':[[0,4,'5-JahresRupturrisiko ≤ 0,9 % – konservativ','good'],[5,7,'1,3–2,4 % – individuelle Entscheidung','mid'],[8,22,'≥ 3,2 % – Behandlung erwägen','high']],'bwps':[[0,24,'Krise unwahrscheinlich','good'],[25,44,'drohende Krise','mid'],[45,140,'thyreotoxische Krise – Intensiv','high']],'child':[[5,6,'Child A (≈100 % 1-JÜR)','good'],[7,9,'Child B (≈80 %)','mid'],[10,15,'Child C (≈45 %)','high']],'curb':[[0,1,'gering (≈1,5 %) – ambulant','good'],[2,2,'stationär erwägen (≈9 %)','mid'],[3,5,'schwer (≈15–40 %) – Intensiv','high']],'wellstvt':[[-9,1,'unwahrscheinlich → D-Dimer','good'],[2,9,'wahrscheinlich → Sono','high']],'wellslae':[[0,4,'unwahrscheinlich → D-Dimer','good'],[4.01,13,'wahrscheinlich → CTA','high']],'qsofa':[[0,1,'kein erhöhtes Risiko','good'],[2,3,'erhöhtes Risiko → eskalieren','high']],'sofa':[[0,5,'gering','good'],[6,11,'moderat','mid'],[12,24,'schwer','high']],'centor':[[-1,1,'gering','good'],[2,3,'Schnelltest erwägen','mid'],[4,5,'hoch – AB erwägen','high']]};
+var ST={'nihss':'sum','mrs':'class','mtici':'class','rope':'sum','gcs':'sum','abcd2':'sum','ich':'sum','hunthess':'class','wfns':'class','fisher':'class','hoehn':'class','edss':'edss_fs','qmg':'sum','mgfa':'class','housebrackmann':'class','spetzler':'sum','phases':'sum','bwps':'sum','child':'sum','meld':'meld','kdigo':'kdigo','vhf':'vhf','ehra':'class','curb':'sum','wellstvt':'sum','wellslae':'sum','qsofa':'sum','sofa':'sum','gbs':'gbs','nyha':'class','centor':'sum'};
+
+var _cur=null;
+function OPEN(id){
+  document.getElementById('home').style.display='none';
+  document.querySelectorAll('.page').forEach(function(p){p.style.display='none';});
+  var pg=document.getElementById('pg-'+id);
+  if(pg)pg.style.display='block';
+  _cur=id;
+  document.getElementById('back').style.display='inline-flex';
+  setTimeout(function(){R(id);},80);
+}
+function BACK(){
+  document.querySelectorAll('.page').forEach(function(p){p.style.display='none';});
+  document.getElementById('home').style.display='block';
+  document.getElementById('back').style.display='none';
+  _cur=null;
+}
+function R(id){
+  if(!id)return;
+  var form=document.getElementById('f-'+id);
+  if(!form)return;
+  var t=ST[id];
+  try{
+    if(t==='sum')   CS(form,id);
+    else if(t==='class') CC(form,id);
+    else if(t==='meld')  CM(form);
+    else if(t==='gfr')   CG(form);
+    else if(t==='alb')   CA(form);
+    else if(t==='gbs')   CB(form);
+    else if(t==='kdigo') CKDIGO(form);
+    else if(t==='edss_fs') CEDSS(form);
+    else if(t==='vhf')   CVHF(form);
+  }catch(err){console.log('R err:',err);}
+}
+function SR(id,val,pill,tone,interp,range){
+  var rv=document.getElementById('rv-'+id),rp=document.getElementById('rp-'+id),
+      ri=document.getElementById('ri-'+id),rr=document.getElementById('rr-'+id);
+  if(!rv)return;
+  rv.innerHTML=val; rp.textContent=pill; rp.className='pill '+(tone||'');
+  ri.textContent=interp||'';
+  if(range!==undefined)rr.textContent=range||'';
+}
+function TW(t){return t==='good'?'günstig':t==='mid'?'intermediär':t==='high'?'hoch/kritisch':'—';}
+function FB(bands,v){for(var i=0;i<bands.length;i++){if(v>=bands[i][0]&&v<=bands[i][1])return bands[i];}return null;}
+function CS(form,id){
+  var tot=0;
+  form.querySelectorAll('input[type=radio]:checked,input[type=checkbox]:checked')
+    .forEach(function(i){tot+=Number(i.value);});
+  var b=FB(BD[id],tot);
+  SR(id,tot+'<small>Pkt</small>',b?TW(b[3]):'—',b?b[3]:'',b?b[2]:'');
+}
+function CC(form,id){
+  var s=form.querySelector('input[type=radio]:checked');
+  if(!s){SR(id,'—','Auswahl treffen','','');return;}
+  var v=s.dataset.v||'';
+  SR(id,v.length>8?'<small>'+v+'</small>':v,TW(s.dataset.tone),s.dataset.tone,s.dataset.desc||'');
+}
+function NV(form,name){var el=form.querySelector('[name='+name+']');return(!el||el.value==='')?NaN:Number(el.value.replace(',','.'));}
+function CK(form,name){var el=form.querySelector('[name='+name+']');return!!(el&&el.checked);}
+/* MELD – Eingabe in µmol/l, Formel rechnet in mg/dl */
+function CM(form){
+  var bi=NV(form,'mbili'),inr=NV(form,'minr'),kr=NV(form,'mkrea');
+  if(isNaN(bi)||isNaN(inr)||isNaN(kr)){SR('meld','—','Werte eingeben','','Bili (µmol/l), INR, Krea (µmol/l)');return;}
+  var bi_mg=Math.max(bi/17.1,1.0);
+  var kr_mg=kr/88.4;
+  if(CK(form,'mdial'))kr_mg=4.0;
+  kr_mg=Math.min(Math.max(kr_mg,1.0),4.0);
+  inr=Math.max(inr,1.0);
+  var m=Math.round(3.78*Math.log(bi_mg)+11.2*Math.log(inr)+9.57*Math.log(kr_mg)+6.43);
+  m=Math.min(Math.max(m,6),40);
+  var na=NV(form,'mna'),score=m,disp=''+m,ex='MELD '+m;
+  if(!isNaN(na)){var nn=Math.min(Math.max(na,125),137);var mn=Math.round(m+1.32*(137-nn)-0.033*m*(137-nn));mn=Math.min(Math.max(mn,6),40);score=mn;disp=''+mn;ex='MELD '+m+' · MELD-Na '+mn;}
+  var lbl=score<10?'≈2%':score<20?'≈6%':score<30?'≈20%':score<40?'≈53%':'≈71%';
+  SR('meld',disp,TW(score<10?'good':score<20?'mid':'high'),score<10?'good':score<20?'mid':'high','3-Mo-Mortalität '+lbl,ex);
+}
+function CG(form){
+  var v=NV(form,'egfr');if(isNaN(v)){SR('gfr','—','Wert eingeben','','');return;}
+  var c,t,l;
+  if(v>=90){c='G1';t='good';l='normal';}else if(v>=60){c='G2';t='good';l='leicht ↓';}
+  else if(v>=45){c='G3a';t='mid';l='leicht–mäßig ↓';}else if(v>=30){c='G3b';t='mid';l='mäßig–schwer ↓';}
+  else if(v>=15){c='G4';t='high';l='schwer ↓';}else{c='G5';t='high';l='Nierenversagen';}
+  SR('gfr',c,TW(t),t,l,'eGFR '+v+' ml/min/1,73m²');
+}
+function CA(form){
+  var v=NV(form,'acr');if(isNaN(v)){SR('alb','—','Wert eingeben','','');return;}
+  var c,t,l;
+  if(v<30){c='A1';t='good';l='normal–leicht ↑';}
+  else if(v<=300){c='A2';t='mid';l='moderat (Mikroalbuminurie)';}
+  else{c='A3';t='high';l='stark (Makroalbuminurie)';}
+  SR('alb',c,TW(t),t,l,'ACR '+v+' mg/g');
+}
+/* GBS – Hb in g/l */
+function CB(form){
+  var p=0,male=(function(){var s=form.querySelector('input[name=gbs_sex]:checked');return s?s.value==='0':true;})();
+  var u=NV(form,'gbs_urea');
+  if(!isNaN(u)){if(u>=25)p+=6;else if(u>=10)p+=4;else if(u>=8)p+=3;else if(u>=6.5)p+=2;}
+  var hb=NV(form,'gbs_hb');  /* Hb in mmol/l (8,1=130g/l; 7,5=120g/l; 6,2=100g/l) */
+  if(!isNaN(hb)){
+    if(male){if(hb<6.2)p+=6;else if(hb<7.5)p+=3;else if(hb<8.1)p+=1;}
+    else     {if(hb<6.2)p+=6;else if(hb<7.5)p+=1;}
+  }
+  var sbp=NV(form,'gbs_sbp');
+  if(!isNaN(sbp)){if(sbp<90)p+=3;else if(sbp<100)p+=2;else if(sbp<110)p+=1;}
+  if(CK(form,'gbs_puls'))p+=1;if(CK(form,'gbs_mel'))p+=1;
+  if(CK(form,'gbs_syn'))p+=2;if(CK(form,'gbs_leb'))p+=2;if(CK(form,'gbs_herz'))p+=2;
+  var l=p<=1?'sehr niedrig – ambulant':p<=6?'intermediär':'hoch – Endoskopie';
+  SR('gbs',''+p,TW(p<=1?'good':p<=6?'mid':'high'),p<=1?'good':p<=6?'mid':'high',l);
+}
+function RST(id){
+  var form=document.getElementById('f-'+id);if(!form)return;
+  var seen={};
+  form.querySelectorAll('input[type=radio]').forEach(function(r){if(!seen[r.name]){r.checked=true;seen[r.name]=true;}else r.checked=false;});
+  form.querySelectorAll('input[type=checkbox]').forEach(function(c){c.checked=false;});
+  form.querySelectorAll('input[type=number]').forEach(function(n){n.value='';});
+  R(id);
+}
+function SRCH(q){
+  var t=q.toLowerCase().trim();
+  document.querySelectorAll('.card').forEach(function(c){c.style.display=(!t||(c.dataset.tags||'').indexOf(t)>=0)?'':'none';});
+  [1,2,3].forEach(function(p){var g=document.getElementById('grp'+p);if(!g)return;
+    var any=[].slice.call(g.querySelectorAll('.card')).some(function(c){return c.style.display!=='none';});g.style.display=any?'':'none';});
+}
+
+/* CHA2DS2-VASc & HAS-BLED – geteilte Items */
+function CVHF(form) {
+  var c = 0, h = 0;
+
+  /* ── Geteilte Items ── */
+  // Alter → CHA2DS2-VASc Altersgruppe + HAS-BLED E (>65)
+  var age = NV(form, 'age');
+  if (!isNaN(age)) {
+    if (age >= 75) c += 2; else if (age >= 65) c += 1;
+    if (age > 65) h += 1;
+  }
+  // Geschlecht weiblich → CHA2DS2-VASc +1
+  var sex = form.querySelector('input[name=sex]:checked');
+  if (sex && sex.value === 'f') c += 1;
+  // Schlaganfall / TIA → CHA2DS2-VASc +2, HAS-BLED +1
+  if (CK(form,'stroke')) { c += 2; h += 1; }
+
+  /* ── Nur CHA2DS2-VASc ── */
+  if (CK(form,'hf'))   c += 1;
+  if (CK(form,'htn'))  c += 1;
+  if (CK(form,'dm'))   c += 1;
+  if (CK(form,'vasc')) c += 1;
+
+  /* ── Nur HAS-BLED ── */
+  var sbp = NV(form, 'sbp');
+  if (!isNaN(sbp) && sbp > 160) h += 1;
+  if (CK(form,'bleed')) h += 1;
+  if (CK(form,'renal')) h += 1;
+  if (CK(form,'liver')) h += 1;
+  if (CK(form,'inr'))   h += 1;
+  if (CK(form,'drugs')) h += 1;
+  if (CK(form,'alc'))   h += 1;
+
+  /* ── CHA2DS2-VASc: Risikodaten Lip et al. 2010 (ohne OAK) ── */
+  var chads_pct = [0, 1.3, 2.2, 3.2, 4.0, 6.7, 9.8, 9.6, 6.7, 15.2];
+  var ct = c===0?'good':c===1?'mid':'high';
+  var cl = c===0?'niedriges Risiko':c===1?'OAK erwägen':'OAK empfohlen (ESC)';
+  var cpct = c < chads_pct.length ? '\u2248\u00a0' + chads_pct[c].toString().replace('.',',') + '\u00a0%/Jahr Schlaganfallrisiko' : '>\u00a015\u00a0%/Jahr';
+  document.getElementById('rv-vhf-c').innerHTML = c + '<small>Pkt</small>';
+  document.getElementById('rp-vhf-c').textContent = TW(ct);
+  document.getElementById('rp-vhf-c').className = 'pill ' + ct;
+  document.getElementById('ri-vhf-c').textContent = cl;
+  document.getElementById('rr-vhf-c').textContent = isNaN(age) ? 'Alter eingeben' : cpct + ' (ohne OAK, Lip 2010)';
+
+  /* ── HAS-BLED: Risikodaten Pisters et al. 2010 ── */
+  var hbled_pct = [1.13, 1.02, 1.88, 3.74, 8.70, 12.50];
+  var ht = h < 3 ? 'good' : 'high';
+  var hl = h < 3 ? 'niedrig\u2013moderat' : 'erh\u00f6htes Blutungsrisiko';
+  var hpct = h < hbled_pct.length ? '\u2248\u00a0' + hbled_pct[h].toString().replace('.',',') + '\u00a0%/Jahr Blutungsereignisse' : '>\u00a012\u00a0%/Jahr';
+  document.getElementById('rv-vhf-h').innerHTML = h + '<small>Pkt</small>';
+  document.getElementById('rp-vhf-h').textContent = TW(ht);
+  document.getElementById('rp-vhf-h').className = 'pill ' + ht;
+  document.getElementById('ri-vhf-h').textContent = hl;
+  document.getElementById('rr-vhf-h').textContent = hpct + ' (Pisters 2010)';
+}
+
+
+/* ── CKD-EPI Formeln ─────────────────────────────────── */
+function ckdKrea(scr_mgdl, age, female) {
+  /* CKD-EPI 2021 race-free */
+  var k=female?0.7:0.9, a=female?-0.241:-0.302, r=scr_mgdl/k;
+  return 142*Math.pow(Math.min(r,1),a)*Math.pow(Math.max(r,1),-1.200)*Math.pow(0.9938,age)*(female?1.012:1);
+}
+function ckdCys(cys, age, female) {
+  /* CKD-EPI CysC 2012 */
+  var r=cys/0.8;
+  return 133*Math.pow(Math.min(r,1),-0.499)*Math.pow(Math.max(r,1),-1.328)*Math.pow(0.996,age)*(female?0.932:1);
+}
+function ckdKreaCys(scr_mgdl, cys, age, female) {
+  /* CKD-EPI Krea+CysC 2012 kombiniert */
+  var k=female?0.7:0.9, a=female?-0.248:-0.207;
+  var r1=scr_mgdl/k, r2=cys/0.8;
+  return 135*Math.pow(Math.min(r1,1),a)*Math.pow(Math.max(r1,1),-0.601)
+           *Math.pow(Math.min(r2,1),-0.375)*Math.pow(Math.max(r2,1),-0.711)
+           *Math.pow(0.995,age)*(female?0.969:1);
+}
+function gfrCat(v) {
+  if(v>=90)return'G1'; if(v>=60)return'G2'; if(v>=45)return'G3a';
+  if(v>=30)return'G3b'; if(v>=15)return'G4'; return'G5';
+}
+function gfrDesc(c){
+  return{G1:'normal/hoch (\\u226590)',G2:'leicht\\u2193 (60\u201389)',
+         G3a:'leicht\u2013m\u00e4\u00dfig\\u2193 (45\u201359)',
+         G3b:'m\u00e4\u00dfig\u2013schwer\\u2193 (30\u201344)',
+         G4:'schwer\\u2193 (15\u201329)',G5:'Nierenversagen (<15)'}[c]||'';
+}
+function albCat(v){return v<30?'A1':v<=300?'A2':'A3';}
+function albDesc(c){return{A1:'normal\u2013leicht\u2191 (<30\u00a0mg/g)',A2:'moderat\u2191 (30\u2013300)',A3:'stark\u2191 (>300)'}[c]||'';}
+
+/* KDIGO Progressionsrisiko-Matrix (KDIGO 2012) */
+var KDIGO_RISK = {
+  G1:{A1:'niedrig',A2:'m\u00e4\u00dfig \u2191',A3:'hoch'},
+  G2:{A1:'niedrig',A2:'m\u00e4\u00dfig \u2191',A3:'hoch'},
+  G3a:{A1:'m\u00e4\u00dfig \u2191',A2:'hoch',A3:'sehr hoch'},
+  G3b:{A1:'hoch',A2:'sehr hoch',A3:'sehr hoch'},
+  G4:{A1:'sehr hoch',A2:'sehr hoch',A3:'extrem hoch'},
+  G5:{A1:'sehr hoch',A2:'extrem hoch',A3:'extrem hoch'}
+};
+var KDIGO_TONE = {
+  'niedrig':'good','m\u00e4\u00dfig \u2191':'mid','hoch':'mid',
+  'sehr hoch':'high','extrem hoch':'high'
+};
+
+function CKDIGO(form) {
+  var age    = NV(form,'kage');
+  var female = (form.querySelector('input[name=ksex]:checked')||{}).value==='f';
+  var krea   = NV(form,'kkrea');   /* µmol/l */
+  var cys    = NV(form,'kcys');    /* mg/l   */
+  var egfrd  = NV(form,'kegfr');   /* direkt */
+  var acr    = NV(form,'kacr');    /* mg/g   */
+
+  /* eGFR berechnen */
+  var egfr=NaN, meth='';
+  var hasAge = !isNaN(age) && age>0;
+  if(hasAge && !isNaN(krea) && !isNaN(cys)){
+    egfr = ckdKreaCys(krea/88.4, cys, age, female);
+    meth = 'CKD-EPI Krea+CysC 2012';
+  } else if(hasAge && !isNaN(cys)){
+    egfr = ckdCys(cys, age, female);
+    meth = 'CKD-EPI CysC 2012';
+  } else if(hasAge && !isNaN(krea)){
+    egfr = ckdKrea(krea/88.4, age, female);
+    meth = 'CKD-EPI Krea 2021';
+  } else if(!isNaN(egfrd)){
+    egfr = egfrd;
+    meth = 'direkt eingegeben';
+  }
+
+  /* eGFR-Ergebnis */
+  var gcat='', gt='', gl='';
+  if(!isNaN(egfr)){
+    egfr = Math.round(egfr*10)/10;
+    gcat = gfrCat(egfr);
+    gt   = gcat==='G1'||gcat==='G2'?'good':gcat==='G3a'||gcat==='G3b'?'mid':'high';
+    gl   = gfrDesc(gcat);
+    document.getElementById('rv-kdigo-g').innerHTML = gcat+'<small>'+Math.round(egfr)+'</small>';
+    document.getElementById('rp-kdigo-g').textContent = TW(gt);
+    document.getElementById('rp-kdigo-g').className = 'pill '+gt;
+    document.getElementById('ri-kdigo-g').textContent = gl;
+    document.getElementById('rr-kdigo-g').textContent = meth+' \u00b7 eGFR '+Math.round(egfr)+' ml/min/1,73\u00a0m\u00b2';
+  } else {
+    document.getElementById('rv-kdigo-g').innerHTML = '\u2014';
+    document.getElementById('rp-kdigo-g').textContent = !hasAge?'Alter eingeben':'Laborwert eingeben';
+    document.getElementById('rp-kdigo-g').className = 'pill';
+    document.getElementById('ri-kdigo-g').textContent = '';
+    document.getElementById('rr-kdigo-g').textContent = '';
+  }
+
+  /* Albuminurie-Ergebnis */
+  var acat='', at='', al='';
+  if(!isNaN(acr)){
+    acat = albCat(acr);
+    at   = acat==='A1'?'good':acat==='A2'?'mid':'high';
+    al   = albDesc(acat);
+    document.getElementById('rv-kdigo-a').innerHTML = acat;
+    document.getElementById('rp-kdigo-a').textContent = TW(at);
+    document.getElementById('rp-kdigo-a').className = 'pill '+at;
+    document.getElementById('ri-kdigo-a').textContent = al;
+    document.getElementById('rr-kdigo-a').textContent = 'ACR '+acr+' mg/g';
+  } else {
+    document.getElementById('rv-kdigo-a').innerHTML = '\u2014';
+    document.getElementById('rp-kdigo-a').textContent = 'ACR eingeben';
+    document.getElementById('rp-kdigo-a').className = 'pill';
+    document.getElementById('ri-kdigo-a').textContent = '';
+    document.getElementById('rr-kdigo-a').textContent = '';
+  }
+
+  /* Kombiniertes Progressionsrisiko */
+  var riskBox = document.getElementById('res-kdigo-risk');
+  if(gcat && acat){
+    var risk = KDIGO_RISK[gcat][acat];
+    var rt   = KDIGO_TONE[risk]||'mid';
+    riskBox.style.display='flex';
+    document.getElementById('rv-kdigo-risk').textContent = gcat+' + '+acat;
+    document.getElementById('rp-kdigo-risk').textContent = risk+' CKD-Progressionsrisiko';
+    document.getElementById('rp-kdigo-risk').className = 'pill '+rt;
+    document.getElementById('ri-kdigo-risk').textContent = 'KDIGO 2012 Risikomatrix';
+  } else {
+    riskBox.style.display='none';
+  }
+}
+
+
+/* ── EDSS-Berechnung aus Funktionssystemen (Kurtzke 1983) ── */
+function CEDSS(form) {
+  var fs = [];
+  for (var i=1;i<=7;i++){
+    var el=form.querySelector('input[name=fs'+i+']:checked');
+    fs.push(el?Number(el.value):0);
+  }
+  var walk = Number((form.querySelector('input[name=walk]:checked')||{value:0}).value);
+  var maxFS = Math.max.apply(null,fs);
+  var n2plus = fs.filter(function(f){return f>=2;}).length;
+  var n3plus = fs.filter(function(f){return f>=3;}).length;
+  var sumFS  = fs.reduce(function(a,b){return a+b;},0);
+
+  var edss = 0, desc = '';
+
+  /* Gehfähigkeit bestimmt EDSS ab ca. 4.0 */
+  /* Walk-Radio-Werte: 0=unbegr., 1=≥500m, 2=200-499m, 3=100-199m, 4=<100m,
+     5=einseit.Gehhilfe, 6=beiderseit., 7=Rollstuhl, 8=Stuhl/Bett, 9=bettl. */
+  if      (walk===9){edss=9.5;desc='weitgehend hilflos bettl\u00e4gerig';}
+  else if (walk===8){edss=8.0;desc='bettl\u00e4gerig / an Stuhl gebunden, eingeschr\u00e4nkte Arme';}
+  else if (walk===7){edss=7.0;desc='rollstuhlpflichtig, Transfer selbstst\u00e4ndig';}
+  else if (walk===6){edss=6.5;desc='beidseitige Gehhilfe ca. 20\u00a0m';}
+  else if (walk===5){edss=6.0;desc='einseitige Gehhilfe ca. 100\u00a0m';}
+  else if (walk===4){edss=5.5;desc='Gehen ohne Hilfe ca. 100\u00a0m';}
+  else if (walk===3){edss=5.0;desc='Gehen ohne Hilfe ca. 200\u00a0m';}
+  else if (walk===2){edss=4.5;desc='Gehen ohne Hilfe ca. 300\u00a0m';}
+  else if (walk===1){
+    /* 4.0 – 4.5 je nach FS */
+    if(maxFS>=4||n2plus>=3||sumFS>=8) edss=4.5;
+    else edss=4.0;
+    desc='Gehen \u2265500\u00a0m ohne Hilfe';
+  } else {
+    /* EDSS 0 – 3.5 aus FS */
+    if(maxFS===0){edss=0;desc='keine messbaren Defizite';}
+    else if(maxFS===1){
+      edss = fs.filter(function(f){return f>=1;}).length>=2?1.5:1.0;
+      desc='Zeichen ohne Behinderung';
+    } else if(maxFS===2){
+      edss = n2plus>=3?3.0:n2plus===2?2.5:2.0;
+      desc=edss>=3.0?'moderate Defizite (mehrere FS)':'minimale Behinderung';
+    } else if(maxFS===3){
+      edss = (n2plus>=2||sumFS>=7)?3.5:3.0;
+      desc='m\u00e4\u00dfige Behinderung, voll gehf\u00e4hig';
+    } else {
+      edss = (n2plus>=3||sumFS>=9)?4.5:4.0;
+      desc='voll gehf\u00e4hig trotz Behinderung';
+    }
+  }
+
+  /* FS-Label f\u00fcr Zusammenfassung */
+  var fsNames=['Pyramidal','Kleinhirn','Hirnstamm','Sensorium','Blase/Mastdarm','Sehen','Zerebral'];
+  var affected = fs.map(function(v,i){return v>0?(fsNames[i]+'\u00a0'+v):null;}).filter(Boolean);
+
+  var tone = edss<=2.5?'good':edss<=5.0?'mid':'high';
+  document.getElementById('rv-edss').textContent = edss.toFixed(1);
+  document.getElementById('rp-edss').textContent = TW(tone);
+  document.getElementById('rp-edss').className = 'pill '+tone;
+  document.getElementById('ri-edss').textContent = desc;
+  document.getElementById('rr-edss').textContent = affected.length?'Betroffene FS: '+affected.join(', '):'Alle FS unauff\u00e4llig';
+}
+
+/* ── Export f\u00fcr Arztbrief ── */
+function exportScore(id) {
+  var form = document.getElementById('f-'+id);
+  if(!form) return;
+  var titleEl = document.querySelector('#pg-'+id+' .ptitle');
+  var title = titleEl ? titleEl.textContent : id.toUpperCase();
+  var rv = document.getElementById('rv-'+id);
+  var ri = document.getElementById('ri-'+id);
+  var val   = rv ? rv.textContent.replace(/\s+/g,' ').trim() : '';
+  var interp= ri ? ri.textContent.trim() : '';
+
+  var lines = [title+': '+val+(interp?' ('+interp+')':'')];
+  lines.push(new Array(lines[0].length+1).join('-'));
+
+  /* EDSS: Funktionssysteme */
+  if(id==='edss'){
+    var fsNames=['Pyramidale Bahnen','Kleinhirn','Hirnstamm','Sensorium',
+                 'Blase & Mastdarm','Sehfunktion','Zerebrale Fkt.'];
+    for(var i=1;i<=7;i++){
+      var el=form.querySelector('input[name=fs'+i+']:checked');
+      if(el){
+        var lbl=el.closest('label').querySelector('.t');
+        lines.push(fsNames[i-1]+': '+(lbl?lbl.textContent.replace(/^\d+\s+\u2013\s+/,'').trim():'')
+                   +' ('+el.value+')');
+      }
+    }
+    var wl=form.querySelector('input[name=walk]:checked');
+    if(wl){var wt=wl.closest('label').querySelector('.t');
+      lines.push('Gehf\u00e4higkeit: '+(wt?wt.textContent.trim():''));}
+  } else {
+    /* Alle anderen Scores: Fields durchgehen */
+    form.querySelectorAll('.field').forEach(function(field){
+      var q=field.querySelector('.q');
+      if(!q) return;
+      var lbl=q.textContent.replace(/[\u2460-\u2473\u24B6-\u24CF]/g,'').trim(); /* Badges entfernen */
+
+      var radio=field.querySelector('input[type=radio]:checked');
+      if(radio){
+        var tEl=radio.closest('label').querySelector('.t,.grade');
+        var txt=tEl?tEl.textContent.trim():'';
+        var pts=radio.value;
+        lines.push(lbl+': '+txt+' ('+pts+')');
+        return;
+      }
+      var cb=field.querySelector('input[type=checkbox]');
+      if(cb&&!cb.closest('.is-check')){return;} /* Skip non-interactive */
+      if(cb){lines.push(lbl+': '+(cb.checked?'ja ('+cb.value+')':'nein'));}
+    });
+  }
+
+  var now = new Date();
+  lines.push('');
+  lines.push('Erhoben: '+now.toLocaleDateString('de-DE')+', '+now.toLocaleTimeString('de-DE',{hour:'2-digit',minute:'2-digit'}));
+  var text = lines.join('\n');
+
+  /* VHF: beide Scores kombiniert ausgeben */
+  if(id==='vhf'){
+    var cv=document.getElementById('rv-vhf-c'),hb=document.getElementById('rv-vhf-h');
+    var cvi=document.getElementById('ri-vhf-c'),hbi=document.getElementById('ri-vhf-h');
+    var age=form.querySelector('[name=age]'),sbp=form.querySelector('[name=sbp]');
+    var sex=form.querySelector('input[name=sex]:checked');
+    lines = [
+      'CHA₂DS₂-VASc: '+(cv?cv.textContent.trim():'—')+' – '+(cvi?cvi.textContent:''),
+      'HAS-BLED:      '+(hb?hb.textContent.trim():'—')+' – '+(hbi?hbi.textContent:''),
+      new Array(42).join('-'),
+    ];
+    if(age&&age.value) lines.push('Alter: '+age.value+' Jahre');
+    if(sex) lines.push('Geschlecht: '+(sex.value==='f'?'weiblich':'männlich'));
+    if(sbp&&sbp.value) lines.push('Syst. RR: '+sbp.value+' mmHg');
+    var items=[
+      ['hf','Herzinsuffizienz / LV-Dysfunktion'],['htn','Hypertonie bekannt'],
+      ['dm','Diabetes mellitus'],['vasc','Gefäßerkrankung (KHK/pAVK)'],
+      ['stroke','Schlaganfall / TIA / Thromboembolie'],['bleed','Frühere Blutung'],
+      ['renal','Nierenfunktionsstörung'],['liver','Leberfunktionsstörung'],
+      ['inr','Labile INR (VKA)'],['drugs','NSAR / Thrombozytenhemmer'],['alc','Alkohol'],
+    ];
+    items.forEach(function(item){
+      var el=form.querySelector('[name='+item[0]+']');
+      if(el&&el.checked) lines.push(item[1]+': ja');
+    });
+    lines.push('');
+    lines.push('Erhoben: '+new Date().toLocaleDateString('de-DE')+', '+new Date().toLocaleTimeString('de-DE',{hour:'2-digit',minute:'2-digit'}));
+    text = lines.join('\n');
+    var btn2=document.querySelector('#pg-vhf .export-btn');
+    function showFB2(ok){if(!btn2)return;var o=btn2.textContent;btn2.textContent=ok?'✓ Kopiert!':'!';setTimeout(function(){btn2.textContent=o;},2000);}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(function(){showFB2(true);}).catch(function(){prompt('',text);showFB2(false);});}
+    else{prompt('',text);}
+    return;
+  }
+    var btn = document.querySelector('#pg-'+id+' .export-btn');
+  function showFeedback(ok){
+    if(!btn) return;
+    var orig = btn.textContent;
+    btn.textContent = ok?'\u2713 Kopiert!':'! Kopieren fehlgeschlagen';
+    setTimeout(function(){btn.textContent=orig;},2000);
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(function(){showFeedback(true);}).catch(function(){
+      prompt('Text markieren und kopieren:',text); showFeedback(false);
+    });
+  } else {
+    prompt('Text markieren und kopieren:',text);
+  }
+}
+
+/* JS-Banner grün setzen */
+var jsBanner=document.getElementById('jsbanner');
+if(jsBanner){jsBanner.style.background='#15803d';jsBanner.textContent='✓ JavaScript aktiv – Rechner bereit';}
+</script>
+</body>
+</html>
